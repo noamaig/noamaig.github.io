@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Noam Aigerman's Homepage</title>
+
+		<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css"/>
+	-->
+	<script type="text/javascript" src="html/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="html/jquery/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="html/jquery/jquery-ui.min.css"/>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="html/JS/setMail.js?2"></script>
+	<script type="text/javascript"> 
+		function crap(){
+			s = ''
+			$('.paper-entry').each(
+				function(){
+					
+					s += '- img: '+ '"' + $(this).children('img').attr('src') + '"\n'
+					s += '  img_alt: '+ '"' + $(this).children('img').attr('alt') + '"\n'
+					s += '  explanation: '+ '"' + $(this).children('img').attr('title') + '"\n'
+
+
+					s += '  authors: ' + '"' + $(this).find('.authors').text() + '"\n'
+
+
+					s += '  title: ' + '"' + $(this).find('.paper-cell').children().first().text() + '"\n'
+					s += '  venue: ' + '"' + $.trim($(this).find('.authors')[0].nextSibling.nodeValue) + '"\n'
+					l = ''
+					$(this).find('a').each(function(){
+						
+						l += '   "' + $.trim($(this).text())+ '": "' + $(this).attr('href') + '"\n'
+					}
+					);
+					s += '  links:\n' + l +'\n'
+
+					  // for ( var i = 0; i < links.length; i++ ) {
+					  //   l += '"'+links[i]+'": "' + links[i].attr('href') +'"\n'
+					  // }
+					
+					console.log(s)	
+
+						// $(this).tooltip({tooltipClass:'paper-size-tooltip',content: function() {
+						// 	var element = $( this );
+						// 	if ( element.is( "[data-size]" ) ) {
+						// 		return element.attr( "data-size" )+ ' MB';
+						// 	}
+
+						// },'position':{my: 'center bottom', at: 'center top',of:$(this)}, hide: {duration:50},show:{duration:10},items:'a'});
+
+					}
+			);
+		}
+	</script>
+	<script type="text/javascript">  
+		function setVline(e){
+			a=$('.vline').first();
+			p=$('.paper-entry').last();
+			t=a.offset().top;
+			b=p.offset().top + p.outerHeight(true);
+			a.height(b-t-20);
+			a.css("left",  p.position().left-20);
+
+		}
+		$(window).resize(setVline);
+		function setTooltip(){
+			$('.paper-link').each(
+				function(){
+
+					$(this).tooltip({tooltipClass:'paper-size-tooltip',content: function() {
+						var element = $( this );
+						if ( element.is( "[data-size]" ) ) {
+							return element.attr( "data-size" )+ ' MB';
+						}
+
+					},'position':{my: 'center bottom', at: 'center top',of:$(this)}, hide: {duration:50},show:{duration:10},items:'a'});
+
+				}
+				);
+
+
+			
+			$('.teaser').each(
+				function(){
+				var parent=$(this);//.parent();
+				$(this).tooltip({
+
+
+
+					'position':{my: 'left top', at: 'left bottom',of:$(this)}, hide: {duration:0},tooltipClass:'teaser-text-tooltip',
+					content: '<div style="background-color:rgba(255,255,255,0);">'+$(this).attr('title')+'<hr style=color:white;"><span style="font-size:85%;color:rgb(230,230,230)"><span style="text-decoration:underline">Figure:</span> '+$(this).attr('alt')+'</span></div>'
+
+				});
+
+			}
+			);
+			$('.paper-data > a').attr("target","_blank");
+
+
+
+
+			
+			
+			
+			
+
+		}
+
+		function setEaster(){
+			fadeouttime=500;
+			fadeintime=6000;
+			$('#mepic').hover(
+				
+				function(){
+
+					$('#me2d').stop().animate({'opacity':0},fadeintime);
+					$('#me2d').promise().done(function(){$('#me3d').stop().animate({'opacity':1},fadeouttime);});
+
+
+				//$('#me2d').promise().done(function(){$(this).css('display','none');$('#me3d').css('display','inline');});
+				
+				
+			},
+			function(){$('#me2d').stop().animate({'opacity':1},fadeouttime);
+			$('#me3d').stop().animate({'opacity':0},fadeouttime);
+		}
+
+		);
+
+			$('#me3d').attr('src','pics/me3d.png');
+		}
+		function setOpacity(){
+			return;
+			hideopa=0.7;
+			fadeint=200;
+			fadeoutt=500;
+			//$('.teaser').css('opacity', opa);  
+
+// when hover over the selected image change the opacity to 1  
+
+$('.teaser').hover(  
+	function(){  
+		$('.teaser').parent().stop().animate({'opacity':hideopa},fadeint); /*,'background-color':'none'*/
+		$(this).parent().stop().animate({'opacity':1},fadeint);/*,'background-color':'rgb(246,245,244)'*/
+
+	},  
+	function(){  
+		$('.teaser').parent().stop().animate({'opacity':1},fadeoutt)/*,'background-color':'none'*/
+	});  
+
+}
+function setYears(){
+	$('li.paperyear').each(function(){
+		var element = $( this );
+		if ( element.is( "[year]" ) ) {
+			element.prepend('<hr class="fancy-line"></hr><div class="tab">'+element.attr('year')+"</div>")
+		}
+	});
+}
+</script>
+
+<script type="text/javascript" src="html/JS/tracking/track_clicks.js"></script>
+<link rel="stylesheet" type="text/css" href="html/css/main.css"/>
+
+</head>
+
+<body onload="setMail();setTooltip();setOpacity();crap()
+
+
+
+setVline();
+$('.vline').hide();
+$('.vline').slideDown(1200);
+//setYears();
+
+
+$('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
+
+	width:'100%'
+},500);
+});
+" >
+<div id = "main_container">
+<div id="main" >
+	<div>
+
+		<div style="float:left;margin-right:1%">
+			<div id="mepic">
+				<img id="me2d" src="pics/weizmann.jpg" style="width:110px;position:absolute;margin-left:10px" alt="Yes, this is I!"  class="round-corner" />
+				<img id="me3d" style="width:130px;opacity:0;position:absolute" alt="Yes, this is I (in 3D!)"   />
+				<img  src="pics/me3d.png" style="width:130px;visibility:hidden"  />
+			</div>	
+		</div>
+		<div >
+			<div class="heading">Noam Aigerman <span style="font-size: 40%">   Pronounced "Noh-uhm", like Noah with an M at the end.</span><br/><span style="font-size: 80%">Research Scientist, Adobe Research</span></div>
+			<div style="font-size:98%">
+
+				<span class="emailplace">lastname@adobe.com</span>
+				<br/>
+				<br/> My research lies within the areas of geometry processing, computer graphics, deep learning, optimization, and the intersection between them.
+		
+			</div>
+		</div>
+	</div>
+	<br/>
+
+	<div style="clear:both">
+
+
+	</div>
+	<div class="vline" > </div>
+	<hr class="fancy-line"/>
+		<!--<div class="heading">Teaching</div>
+		2016: Minicourse on computational aspects of mappings at the <a href= "http://www.geometrysummit.org/summerschool/program.html">IGS summer school</a>.<br> 
+		2015: Co-organizing the Seminar on Advanced Topics in Optimization with Shahar Kovalsky.<br>
+		2013: TA for "Numerical Linear Algebra and Convex Optimization".
+		<hr class="fancy-line" />-->
+		<div id="pub">
+			<span class="heading">Publications</span>
+			<span style="color:rgb(100,150,180)">(hover over a project's image for a one-sentence summary)</span>
+			<ol style="padding:0px;list-style-type:none">
+				<li class="paperyear" year="2022">
+					<ol>
+						<li class="paper-entry" style="position:relative">
+
+
+							<!--<div class="teaser">-->
+								<img  src="html/projects/isoinj/isoinj.jpg" alt="Top: our previous method can produce a 1-to-1 UV map of the bunny into the cross, but has distortion and scales some parts of mesh (in red). Bottom: this paper can also compute a 1-to-1 UV map, but also ensure it has low distortion and less scaling." class="teaser"  title="An energy that penalizes both lack of injectivity and high isometric distortion at the same time, enabling computation of 1-to-1 and low-distortion maps with arbitrary positional constraints."  />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Isometric Energies for Recovering Injectivity in Constrained Mapping</b><br/>
+								<div class="paper-data"><span class="authors"> Xingyi Du, Danny M. Kaufman, Qingnan Zhou, Shahar Z. Kovalsky, Yajie Yan, <span class="hi">Noam Aigerman</span>, Tao Ju</span>
+									ACM SIGGRAPH Asia 2022<br/>
+									<a href="https://duxingyi-charles.github.io/publication/isometric-energies-for-recovering-injectivity-in-constrained-mapping/">Project page</a>
+								</div>
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li>
+						
+						<li class="paper-entry" style="position:relative">
+
+
+							<!--<div class="teaser">-->
+								<img  src="html/projects/patch-rd/patch-rd.jpg" alt="A chair with parts of it missing (left) is completed by our method to a full chair (middle) by copying and transforming existing parts to missing areas, while competing generative approaches produce fuzzy approximiations (right)." class="teaser"  title="Training a network to complete missing parts of a shape by copying and transforming existing parts of the input."  />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>PatchRD: Detail-Preserving Shape Completion by Learning Patch Retrieval and Deformation</b><br/>
+								<div class="paper-data"><span class="authors">Bo Sun, Vladimir G. Kim, <span class="hi">Noam Aigerman</span>, Qixing Huang, Siddhartha Chaudhuri</span>
+									ECCV 2022 <br/>
+									<a href="https://arxiv.org/abs/2207.11790">Paper</a> | <a href="https://github.com/GitBoSun/PatchRD">Code</a>
+								</div>
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li>
+
+						<li class="paper-entry" style="position:relative">
+
+
+							<!--<div class="teaser">-->
+								<img  src="html/projects/joint_atlases/joint_atlases.jpg" alt="Our method produces an atlas with a complex topology for a set of shapes." class="teaser"  title="Computing a UV layout for given shapes by representing the map as a mixture of gaussians, enabling defining arbitrary topologies."  />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Learning Joint Surface Atlases</b><br/>
+								<div class="paper-data"><span class="authors">Theo Deprelle, Thibault Groueix, <span class="hi">Noam Aigerman</span>, Vladimir G. Kim, Mathieu Aubry</span>
+									ECCV Workshop on Learning to Generate 3D Shapes and Scenes, 2022 <br/>
+									<a href="https://arxiv.org/abs/2206.06273">Paper</a> | <a href="https://github.com/TheoDEPRELLE/Joint-Atlas-Surfaces">Code</a>
+								</div>
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li>
+						<li class="paper-entry" style="position:relative">
+
+
+							<!--<div class="teaser">-->
+								<img  src="html/projects/NJF/NJF.jpg" alt="left: a UV map predicted by the network, almost identical to the ground-truth. Right: the network correctly reposes the bunny to the poses demonstrated by the human." class="teaser"  title="A framework for learning to deform meshes in a highly detail-preserving manner, without being tied to a specific mesh."  />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Neural Jacobian Fields: Learning Intrinsic Mappings of Arbitrary Meshes</b><br/>
+								<div class="paper-data"><span class="authors"><span class="hi">Noam Aigerman</span>, Kunal Gupta, Vladimir Kim, Siddhartha Chaudhuri,  Jun Saito, Thibault Groueix</span>
+									ACM SIGGRAPH 2022 (journal track)<br/>
+									<a href="https://arxiv.org/abs/2205.02904">Paper</a> | <a href="https://github.com/ThibaultGROUEIX/NeuralJacobianFields">Code</a>
+								</div>
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li>
+						<!-- <li class="paper-entry" style="position:relative">
+
+
+								<img  src="html/projects/mobiusconv/mobiusconv.jpg" alt="The scheme for equivariant transformations" class="teaser"  title="A formulation of spherical CNN's that are equivariant to mobius transformations,."  />
+								
+							<div class="paper-cell">
+
+								<b>Neural Jacobian Fields: Learning Intrinsic Mappings of Arbitrary Meshes</b><br/>
+								<div class="paper-data"><span class="authors"><span class="hi">Noam Aigerman</span>, Kunal Gupta, Vladimir Kim, Siddhartha Chaudhuri,  Jun Saito, Thibault Groueix</span>
+									ACM SIGGRAPH 2022 (journal track)<br/>
+									<a href="https://arxiv.org/abs/2205.02904">Paper</a> | <a href="https://github.com/ThibaultGROUEIX/NeuralJacobianFields">Code</a>
+								</div>
+								
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li> -->
+						<li class="paper-entry" style="position:relative">
+
+
+							<!--<div class="teaser">-->
+								<img  src="html/projects/cnnmaps/cnnmaps.jpg" alt="The framework learns to represent a surface map from a coarse atlasnet-like MLP composed with a CNN that adds details" class="teaser"  title="Extension of Neural Surface Maps, which decomposes coarse/fine features to an AtlasNet-like representation along with a CNN which adds details."  />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Neural Convolutional Surfaces</b><br/>
+								<div class="paper-data"><span class="authors">Luca Morreale,  <span class="hi">Noam Aigerman</span>, Paul Guerrero, Vladimir Kim,  Niloy Mitra</span>
+									CVPR 2022<br/>
+									<a href="http://geometry.cs.ucl.ac.uk/projects/2022/cnnmaps/">Project Page </a> 
+								</div>
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li>
+						<li class="paper-entry" style="position:relative">
+
+
+							<!--<div class="teaser">-->
+								<img  src="html/projects/glass/glass.jpg" alt="Various poses (orange) generated by our method from a few landmark poses (gray)." class="teaser"  title="Learning to generate meaningful shape deformations from a (very) sparse set of example deformations."  />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>GLASS: Geometric Latent Augmentation for Shape Spaces</b><br/>
+								<div class="paper-data"><span class="authors">Sanjeev Muralikrishnan, Siddhartha Chaudhuri,  <span class="hi">Noam Aigerman</span>, Vladimir Kim, Matthew Fisher, Niloy Mitra</span>
+									CVPR 2022<br/>
+									<a href="https://arxiv.org/abs/2108.03225">Paper </a> 
+								</div>
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li>
+					</ol>
+				</li>
+
+				
+				<li class="paperyear" year="2021">
+					<ol>
+						<li class="paper-entry" style="position:relative">
+
+
+							<!--<div class="teaser">-->
+								<img  src="html/diff_tri.jpg" alt="A mesh (right) generated by optimizing the alignment of its edges to the input vector field (left)." class="teaser"  title="A continuous representation of the space of triangulations using 2D power diagrams, enabling using gradient-descent methods (namely within the context of deep learning) to optimize and learn triangulations."  />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Differentiable Surface Triangulation</b><br/>
+								<div class="paper-data"><span class="authors">Marie-Julie Rakotosaona, <span class="hi">Noam Aigerman</span>, Niloy Mitra, Maks Ovsjanikov, Paul Guerrero</span>
+									ACM SIGGRAPH ASIA 2021<br/>
+									<a href="https://arxiv.org/abs/2109.10695">Paper </a> | <a href = "https://github.com/mrakotosaon/diff-surface-triangulation">Code</a>
+								</div>
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li>
+						<li class="paper-entry" style="position:relative">
+
+
+							<!--<div class="teaser">-->
+								<img  src="html/opt_global_inj.jpg" alt="A mesh (left) is paramterized to an initial parameterization (middle) with local inversions of triangles and global overlaps of the boundary, which are then alleviated through our optimization (right). " class="teaser"  title="A smooth energy that when optimized yields globally-injective parameterizations (without triangles folding over and without parts of the boundaries overlapping one another)."  />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Optimizing Global Injectivity for Constrained Parameterization</b><br/>
+								<div class="paper-data"><span class="authors"> Xingyi Du, Danny M. Kaufman, Qingnan Zhou, Shahar Z. Kovalsky, Yajie Yan,  <span class="hi">Noam Aigerman</span>, Tao Ju</span>
+									ACM SIGGRAPH ASIA 2021<br/>
+									<a href="https://duxingyi-charles.github.io/publication/optimizing-global-injectivity-for-constrained-parameterization/">Project Page </a>
+								</div>
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li>
+						<li class="paper-entry" style="position:relative">
+
+
+							<!--<div class="teaser">-->
+								<img  src="html/temporal.jpg" alt="A sequence of reconstructed surfaces using our algorithm, exhibiting good consistent correspondences between each frame in the sequence them (visualized via texture that exhibits the correspondence)." class="teaser"  title="Given a sequence of points clouds representing a motion of a shape, this algorithm reconstructs a sequence of surfaces that lie in good correspondence with one another (e.g., head in frame 1 corresponds to head in frame 2)."  />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Temporally-Coherent Surface Reconstruction via Metric-Consistent Atlases</b><br/>
+								<div class="paper-data"><span class="authors">Jan Bednarik, Vladimir G. Kim, Siddhartha Chaudhuri, Shaifali Parashar,
+Mathieu Salzmann, Pascal Fua, <span class="hi">Noam Aigerman</span></span>
+									ICCV 2021<br/>
+									<a href="https://arxiv.org/abs/2104.06950">Paper </a> | <a href = "https://youtu.be/jfNQPTsbM3g">Video</a>
+								</div>
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li>
+						<li class="paper-entry" style="position:relative">
+
+							
+							<!--<div class="teaser">-->
+								<img  src="html/sweep.jpg" alt="A 2D brush is swept along a spiraling trajectory (left), tracing the golden horn (right)." class="teaser"  title="An algorithm for robustly computing the total volume occupied by a shape as it's moving along a trajectory."  />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Swept Volumes via Spacetime Numerical Continuation</b><br/>
+								<div class="paper-data"><span class="authors">Silvia Sellán, <span class="hi">Noam Aigerman</span>, Alec Jacobson</span> 
+									ACM SIGGRAPH 2021<br/>
+									<a href="https://www.dgp.toronto.edu/projects/swept-volumes/">Project Page </a>
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li>
+						<li class="paper-entry" style="position:relative">
+
+							
+							<!--<div class="teaser">-->
+								<img  src="html/decorgan2.jpg" alt="Coarse voxel grids (red) are refined into different types of plants (yellow), based on the input desired style (green)." class="teaser"  title="Training a GAN to upsample coarse voxel grids, conditioned on a desired style, to create realistic high-resolution models."  />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>DECOR-GAN: 3D Shape Detailization by Conditional Refinement</b><br/>
+								<div class="paper-data"><span class="authors">Zhiqin Chen, Vladimir G. Kim, Matthew Fisher, <span class="hi">Noam Aigerman</span>, Hao Zhang, Siddhartha Chaudhuri</span> 
+									CVPR 2021 (oral)<br/>
+									<a href="https://arxiv.org/abs/2012.09159">Paper</a> | <a href="https://github.com/czq142857/DECOR-GAN">Code</a> 
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li>
+						<li class="paper-entry" style="position:relative">
+
+							
+							<!--<div class="teaser">-->
+								<img  src="html/neural_surface_maps.jpg" alt="Two surfaces are repsented as 2D-to-3D maps via two overfitted neural networks. Since they are both differentiable,this in turn enables optimizing a surface-to-surface map (via h) in a completely differentiable manner." class="teaser"  title="Representing surface maps as neural networks, and optimizing differentiable composition of such maps to compute mappings between surfaces which minimize distortion."  />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Neural Surface Maps</b><br/>
+								<div class="paper-data"><span class="authors">Luca Morreale, <span class="hi">Noam Aigerman</span>,  Vladimir Kim, Niloy J. Mitra</span> 
+
+									CVPR 2021<br/>
+									<a href="http://geometry.cs.ucl.ac.uk/projects/2021/neuralmaps/">Project Page </a>
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li>
+						
+						<li class="paper-entry" style="position:relative">
+
+							
+							<!--<div class="teaser">-->
+								<img  src="html/DSE.jpg" alt="A point cloud is meshed using our neural network." class="teaser"  title="Using a network to drive local delaunay triangulations of point clouds, which generate a manifold triangulation of the point cloud in a data-driven manner."  />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b> Learning Delaunay Surface Elements for Mesh Reconstruction </b><br/>
+								<div class="paper-data"><span class="authors">Marie-Julie Rakotosaona, Paul Guerrero,  <span class="hi">Noam Aigerman</span>, Niloy J. Mitra, Maks Ovsjanikov  </span> 
+									CVPR 2021 (oral) <br/>
+									<a href="http://www.lix.polytechnique.fr/Labo/Marie-Julie.RAKOTOSAONA/dse_meshing.html">Project Page</a> 
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li>
+						<li class="paper-entry" style="position:relative">
+
+							
+							<!--<div class="teaser">-->
+								<img  src="html/retrieve_and_deform.jpg" alt="The framework of our method." class="teaser"  title="A neural network is trained to retrieve and deform appropriate models from a database, based on its knowledge of their deformation space and how well can they fit to the target."  />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Joint Learning of 3D Shape Retrieval and Deformation</b><br/>
+								<div class="paper-data"><span class="authors">Mikaela Angelina Uy, Vladimir G. Kim, Minhyuk Sung, <span class="hi">Noam Aigerman</span>, Siddhartha Chaudhuri, Leonidas Guibas </span> 
+									CVPR 2021 <br/>
+									<a href="https://joint-retrieval-deformation.github.io/">Project Page</a> 
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+							</div>
+
+							<div style="clear:both;"></div>
+
+						</li>
+					</ol>
+				</li>
+		<li class="paperyear" year="2020">
+			<ol>
+				<li class="paper-entry" style="position:relative">
+
+
+					<!--<div class="teaser">-->
+						<img  src="html/projects/developability/developability-thumb.jpg" class="teaser"  alt="Our method approximates the input heightfield surface (left) by a piecewise-developable heightfield surface (right)." title="An algorithm that computes heightfields that are  piecewise-developalbe (can be created by bending sheets of paper) from input heightfields. The core theoretical idea uses intuition from compressed sensing, and an observation regarding the low rank of the hessian of developable heightfields. " />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Developability of Heightfields via Rank Minimization</b><br/>
+								<div class="paper-data"><span class="authors">Silvia Sellán, <span class="hi">Noam Aigerman</span>, Alec Jacobson</span> 
+									ACM SIGGRAPH 2020<br/>
+									<a href="https://www.dgp.toronto.edu/projects/compressed-developables/">Project Page </a>
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+					</div>
+
+					<div style="clear:both;"></div>
+
+				</li>
+				<li class="paper-entry" style="position:relative">
+
+
+					<!--<div class="teaser">-->
+						<img alt="A coarse mesh is subidivided via a neural network, which restores natural geometric features without over-smoothing." src="html/projects/subdiv/neuralSubdiv.jpg" class="teaser"  title="Training a neural network to apply data-driven recursive subdivision operations." />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Neural Subdivision</b><br/>
+								<div class="paper-data"><span class="authors">Hsueh-Ti Derek Liu, Vladimir G. Kim, Siddhartha Chaudhuri, <span class="hi">Noam Aigerman</span>, <span style="white-space: nowrap">Alec Jacobson</span> </span>
+									ACM SIGGRAPH 2020<br/>
+									<a href="https://arxiv.org/abs/2005.01819">Paper</a> | <a  href="https://www.dgp.toronto.edu/projects/neural-subdivision/">Code</a> 
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+					</div>
+
+					<div style="clear:both;"></div>
+
+				</li>
+				<li class="paper-entry" style="position: relative">
+
+					<div class="paper-cell">
+						<img alt="Mapping a mesh into a non-convex domain without any inversions, yielding a globally injective map" src="html/projects/TLC/TLC.jpg" class="teaser"  title="An algorithm minimizing an energy designed specifically to recover injectivity of a map." />
+						<b> Lifting Simplices to Find Injectivity</b> <br>
+						<div class="paper-data"><span class="authors">Xingyi Du, <span class="hi">Noam Aigerman</span>, Qingnan Zhou, Shahar Kovalsky, Yajie Yan, Danny M. Kaufman, Tao Ju </span>
+
+
+							ACM SIGGRAPH 2020 <br>
+							<a href="https://duxingyi-charles.github.io/publication/lifting-simplices-to-find-injectivity/Lifting-Simplices-to-Find-Injectivity.pdf" target="_blank"> Paper</a> | <a href="https://duxingyi-charles.github.io/publication/lifting-simplices-to-find-injectivity/"> Project Page</a> | <a href="https://github.com/duxingyi-charles/lifting_simplices_to_find_injectivity" target="_blank"> Code</a> | <a href="https://zenodo.org/record/3827969#.Xr7HEBNKjUI" target="_blank"> Data Set </a> | <a href="https://duxingyi-charles.github.io/publication/lifting-simplices-to-find-injectivity/lucy_G.mp4" target="_blank"> Video </a><p></p>
+						</div>
+					</div>
+					<div style="clear:both;"></div>
+				</li>
+				
+
+				<li class="paper-entry" style="position:relative">
+
+					
+					
+
+
+					<img alt="Deforming humanoids to match example poses via a neural network, while preserving details." src="html/projects/ncages/deformation_transfer.jpg" class="teaser"  title="Using cage deformations to enable networks to deform shapes without ruining/smoothing out details." />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Neural Cages for Detail-Preserving 3D Deformations</b><br/>
+								<div class="paper-data"><span class="authors">Wang Yifan, <span class="hi">Noam Aigerman</span>, Vladimir G. Kim, Siddhartha Chaudhuri, <span style="white-space: nowrap">Olga Sorkine-Hornung</span></span>
+									CVPR 2020 (oral)<br/>
+									<a class="paper-link" href="html/projects/ncages/paper.pdf" data-size="4.5">Paper</a> | <a  href="https://yifita.github.io/project/neural-shape/" data-size="2">Project Page</a> 
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+					</div>
+					<div style="clear:both;"></div>
+				</li>
+				<li class="paper-entry" style="position:relative">
+					<img alt="Comparison of reconstruction quality of the hybrid reconstruction versus the two components of the hybrid." src="html/hybrid.jpg" class="teaser"  title="Training a network to  jointly reconstructs  implicit and explicit surface representations that agree with one another yields superior results." />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Coupling Explicit and Implicit Surface Representations for Generative 3D Modeling</b><br/>
+								<div class="paper-data"><span class="authors">Omid Poursaeed, Matthew Fisher,   <span class="hi">Noam Aigerman</span>, Vladimir G. Kim </span>
+									ECCV 2020 <br/>
+									<a  href="https://omidpoursaeed.github.io/publication/hybrid/">Project Page</a> 
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+					</div>
+					<div style="clear:both;"></div>
+				</li>
+			</ol>
+		</li>
+		<li class="paperyear" year="2017">
+			<ol>
+				<li class="paper-entry" style="position:relative">
+
+
+					<!--<div class="teaser">-->
+						<img alt="An embedding of a mesh into a spherical orbifold, which can tile the sphere." src="html/projects/spherical/spherical.jpg" class="teaser"  title="An extension of the orbifold Tutte embeddings to spherical domains." />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Spherical Orbifold Tutte Embeddings</b><br/>
+								<div class="paper-data"><span class="authors"><span class="hi">Noam Aigerman</span>, Shahar Kovalsky, Yaron Lipman</span>
+									ACM SIGGRAPH 2017<br/>
+									<a class="paper-link" href="html/projects/spherical/highres.pdf" data-size="50">Paper</a> | <a class="paper-link" href="html/projects/spherical/lowres.pdf" data-size="3.6">Low Res</a> | <a  href="https://github.com/noamaig/spherical_orbifolds" data-size="2">Code</a> 
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+					</div>
+
+					<div style="clear:both;"></div>
+
+				</li>
+
+				<li class="paper-entry" style="position:relative">
+
+
+					<!--<div class="teaser">-->
+						<img alt="A convolution of a filter on a spherical surface is well-defined on the surface's toric 4-cover." src="html/projects/orbifold_learning/lern2.jpg" class="teaser"  title="Applyig CNN's to spherical surfaces, by using the orbifold Tutte embeddings to bijectively and seamlessly embed 4 copies of the surface into a square image with cyclic boundary conditions, which enables regular 2D convolution." />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Convolutional Neural Networks on Surfaces via Seamless Toric Covers</b><br/>
+								<div class="paper-data"><span class="authors">Haggai Maron, Meirav Galun, <span class="hi">Noam Aigerman</span>, Miri Trope, Nadav Dym, Ersin Yumer, Vladimir G. Kim, Yaron Lipman</span>
+									ACM SIGGRAPH 2017<br/>
+									<a class="paper-link" href="html/projects/orbifold_learning/highres.pdf" data-size="75">Paper</a> | <a class="paper-link" href="html/projects/orbifold_learning/lowres.pdf" data-size="1">Low Res</a> | <a href="http://www.wisdom.weizmann.ac.il/~haggaim/projects/geometry_learning/code.rar">Code</a>
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+					</div>
+
+					<div style="clear:both;"></div>
+
+				</li>
+			</ol>
+		</li>
+		<li class="paperyear" year="2016">
+
+			<ol>
+				<li class="paper-entry" style="position:relative">
+
+
+					<!--<div class="teaser">-->
+						<img alt="An embedding of a mesh into a hyperbolic orbifold, which can tile the Poincare-disk model of the hyperbolic plane." src="html/projects/hyperbolic/hyperbolic.jpg" class="teaser"  title="An extension of Tutte's embedding to hyperbolic domains." />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Hyperbolic Orbifold Tutte Embeddings</b><br/>
+								<div class="paper-data"><span class="authors"><span class="hi">Noam Aigerman</span>, Yaron Lipman</span>
+									ACM SIGGRAPH Asia 2016<br/>
+									<a class="paper-link" href="html/projects/hyperbolic/hyperbolic.pdf" data-size="79">Paper</a> | <a class="paper-link" href="html/projects/hyperbolic/hyperbolic_low.pdf" data-size="6">Low Res</a> | <a href="https://github.com/noamaig/hyperbolic_orbifolds/"> Code </a>
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+					</div>
+
+					<div style="clear:both;"></div>
+
+				</li>
+
+			</ol>
+		</li>
+		<li class="paperyear" year="2015">
+			<ol>				
+				<li class="paper-entry" style="position:relative">
+
+
+					<!--<div class="teaser">-->
+						<img alt="An embedding of a mesh into a planar orbifold, which can also be used to generate seamless quads on the mesh." src="html/projects/orbifold/orbifold2.png" class="teaser"  title="An extension of Tutte's embedding for boundaryless parameterizations of spheres." />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+
+								<b>Orbifold Tutte Embeddings</b><br/>
+								<div class="paper-data"><span class="authors"><span class="hi">Noam Aigerman</span>, Yaron Lipman</span>
+									ACM SIGGRAPH Asia 2015<br/>
+									<a class="paper-link" href="html/projects/orbifold/orbifold_highres.pdf" data-size="113">Paper</a> | <a class="paper-link" href="html/projects/orbifold/orbifold_lowres.pdf" data-size="2">Low Res</a>  | <a  href="https://github.com/noamaig/euclidean_orbifolds" data-size="2">Code</a> 
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+
+					</div>
+
+					<div style="clear:both;"></div>
+
+				</li>
+				<li class="paper-entry" style="position:relative">
+
+
+					<!--<div class="teaser">-->
+						<img alt="A large-scale bijective parametrization of a tetrahedral mesh to a ball." src="html/projects/largescale/largescaleBD.jpg" class="teaser"  title="An efficient algorithm for computing large-scale bounded distortion maps of meshes." />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+								<b>Large Scale Bounded Distortion Mappings</b><br/>
+								<div class="paper-data"><span class="authors">Shahar Kovalsky, <span class="hi">Noam Aigerman</span>, Ronen Basri, Yaron Lipman</span>
+									ACM SIGGRAPH Asia 2015<br/>
+									<a class="paper-link" href="html/projects/largescale/LargeScaleBD.pdf" data-size="57">Paper</a> | <a class="paper-link" href="html/projects/largescale/LargeScaleBD_lowRes.pdf" data-size="4">Low Res</a> |
+									<a href = "https://shaharkov.github.io/LargeScaleBD.html">Project Page</a>
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+					</div>
+
+					<div style="clear:both;"></div>
+
+				</li>
+
+				<li class="paper-entry" style="position:relative">
+
+
+					<!--<div class="teaser">-->
+						<img alt="Two identical bijective maps between two surface-meshes produced for two different cut placements." src="html/projects/seamless/david_max_small.png" class="teaser"  title="Computing bijections between surface-meshes in a way which is agnostic to the cutting of the meshes." />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+								<b>Seamless Surface Mappings</b><br/>
+								<div class="paper-data"><span class="authors"><span class="hi">Noam Aigerman</span>, Roi Poranne, Yaron Lipman</span>
+									ACM SIGGRAPH 2015<br/>
+									<a class="paper-link" href="html/projects/seamless/seamless.pdf" data-size="40">Paper</a> | <a class="paper-link" data-size="6" href="html/projects/seamless/seamless_lowres.pdf">Low Res</a> 
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+					</div>
+
+					<div style="clear:both;"></div>
+
+				</li>
+			</ol>
+		</li>
+		<li class="paperyear" year="2014">
+			<ol>						
+				<li class="paper-entry" style="position:relative">
+
+
+					<!--<div class="teaser">-->
+						<img alt="A low distortion bijective map between two surface-meshes." src="html/projects/lifted/lifted_bijection_small.png" class="teaser"  title="Computing low-distortion bijections between surface-meshes by recovering (&#34;lifting&#34;) these bijections from self-overlapping flattenings." />
+								<!--<div style="position:relative">
+									<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+								</div>
+							</div>-->
+							<div class="paper-cell">
+								<b>Lifted Bijections for Low Distortion Surface Mappings</b><br/>
+								<div class="paper-data"><span class="authors"><span class="hi">Noam Aigerman</span>, Roi Poranne, Yaron Lipman</span>
+									ACM SIGGRAPH 2014<br/>
+									<a class="paper-link" data-size="48" href="html/projects/lifted/lifted.pdf">Paper</a> | <a class="paper-link" data-size="2" href="html/projects/lifted/lifted_lowres.pdf">Low Res</a> <!--| <a href="html/projects/lifted/2014_siggraph.pptx">slides</a> -->
+								</div>	
+								<!--<div style="position:relative">
+							<div class="desc"  style="position:absolute;background-color:white;z-index:1">A low distortion bijective map between 2 surface-meshes.</div>
+						</div>-->
+					</div>
+
+					<div style="clear:both;"></div>
+
+				</li>
+				<li class="paper-entry">
+
+					<img alt="The 'most conformal' mapping of a volumetric cube, subject to repositioning its eight corners." src="html/projects/cont/cont_sing_small.png" class="teaser"  title="Characterization of convex sets of matrices possessing bounded Singular Values, enabling optimization via Semidefinite Programming."/>
+
+					<div class="paper-cell">
+						<b>Controlling Singular Values with Semidefinite Programming</b><br/>
+						<div class="paper-data"><span class="authors">Shahar Kovalsky*, <span class="hi">Noam Aigerman*</span>, Ronen Basri, Yaron Lipman</span>
+							<span style="font-size:90%">(*equal contributors)</span><br/>
+							ACM SIGGRAPH 2014 <br/>
+							<a class="paper-link" data-size="37" href="html/projects/cont/cont_sing.pdf">Paper</a> | <a class="paper-link" data-size="2" href="html/projects/cont/cont_sing_lowres.pdf">Low Res</a> | <a href="http://www.wisdom.weizmann.ac.il/~shaharko/ContSingVal.html">Project Page</a> 
+						</div>
+					</div>
+					<div style="clear:both;"></div>
+				</li>
+			</ol>
+		</li>
+		<li class="paperyear" year="2013">
+
+			<ol>	
+				<li class="paper-entry">
+
+					<img alt="A bounded-distortion, globally bijective map, mapping a tetrahedral mesh to a polycube." class="teaser" src="html/projects/bd3d/bd3d_small.png"  title="An efficient method for projecting an input piecewise-linear map onto the bounded-distortion space."/>
+
+					<div class="paper-cell">
+						<b>Injective and Bounded Distortion Mappings in 3D</b><br/>
+						<div class="paper-data"><span class="authors"><span class="hi">Noam Aigerman</span>, Yaron Lipman</span>
+							ACM SIGGRAPH 2013
+							<br/> <a class="paper-link" data-size="28" href="html/projects/bd3d/bd3d.pdf">Paper</a> | <a class="paper-link" data-size="2" href="html/projects/bd3d/bd3d_lowres.pdf">Low Res</a> | <a href="html/projects/bd3d/bd3d.html">Project Page <b>(code + data)</b></a>
+						</div>
+
+					</div>
+					<div style="clear:left;"></div>
+				</li>
+			</ol>
+		</li>
+		<li>
+			<hr class="fancy-line"/>
+
+			<div class="heading">Others</div>
+			<ol>	
+				<li class="paper-entry">
+
+					<img alt="A deformation of a bar." class="teaser" src="html/projects/IGS2016/teaser.jpg"  title="A course on practical aspects of map-computation."/>
+
+					<div class="paper-cell">
+						<b>Computational Aspects of Mappings</b><br/>
+						<div class="paper-data">
+							Tutorial given at the IGS 2016 summer school (with Shahar Kovalsky)
+							<br/>  <a class="paper-link" data-size="15" href="html/projects/IGS2016/slide.pdf">Slides (pdf)</a> 
+						</div>
+
+					</div>
+					<div style="clear:left;"></div>
+				</li>
+			</ol>
+		</li>
+	</ol>
+</div>
+<a href="https://pbs.twimg.com/media/EoZdmz4XIAIYx16?format=jpg&name=large" target="_blank">Research, in a nutshell</a>
+</div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,330 @@
+ol{
+  list-style-type:none;
+  padding: 0px;
+}x
+body{
+  /*font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  -webkit-text-size-adjust: 100% ;*/
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+
+  /*background-color:rgb(245,245,245);*/
+  color: rgb(15,2,0);)
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/rgb(245,245,249)+0,d8e8ff+100 */
+background: rgb(245,245,249); /* Old browsers */
+background: -moz-linear-gradient(45deg,  rgb(245,245,249) 0%, rgb(245,245,245) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgb(245,245,249)), color-stop(100%,rgb(245,245,245))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(45deg,  rgb(245,245,249) 0%,rgb(245,245,245) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(45deg,  rgb(245,245,249) 0%,rgb(245,245,245) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(45deg,  rgb(245,245,249) 0%,rgb(245,245,245) 100%); /* IE10+ */
+background: linear-gradient(45deg,  rgb(245,245,249) 0%,rgb(245,245,245) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(245,245,249)', endColorstr='rgb(245,245,245)',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+.paper-entry{
+  /*display:inline-block;*/
+  padding-bottom:20px;
+
+}
+
+.bookmark{
+  border-top-left-radius:15px;
+  border-bottom-left-radius:15px;
+  -moz-border-top-left-radius:15px;
+  -moz-border-bottom-left-radius:15px;
+  font-size:90%;
+  padding-top:5px;
+  padding-bottom:5px;
+  background-color:rgb(255,255,170);
+
+}
+.round-corner,#main,.paper-entry{
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+.tab{
+  border-radius: 0px 0px 10px 0px;
+-moz-border-radius: 0px 0px 10px 0px;
+-webkit-border-radius: 0px 0px 10px 0px;
+
+    padding-left: 2px;
+    padding-right: 4px;
+    padding-bottom: 3px;
+    padding-top: 2px;
+        display: inline-block;
+
+    position: relative;
+    
+        top: -15px;
+    font-size: x-small;
+    left: -10px;
+    color: rgb(100,100,100);
+    /*
+    background-color: rgb(255,255,225);
+    border: solid 1px rgb(225,255,205);
+    
+        border-right: : solid 1px rgb(205,255,205);
+        border-bottom: : solid 1px rgb(205,255,205);*/
+}
+.shadow ,.bookmark,#main{
+
+  box-shadow:         3px 3px 5px 3px #ccc;
+}
+.paper-table{
+  border-collapse:collapse;
+  border-spacing: 0; 
+}
+.paper-cell{
+	float:left;
+  padding-top: 12px;
+}
+
+.cen{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  }
+  tr td:first-child {
+    -moz-border-radius-topleft: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -webkit-border-top-left-radius: 15px;
+    -webkit-border-bottom-left-radius: 15px;
+
+  }
+
+  tr td:last-child {
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+  }
+  tr{
+    border: 2px solid blue;
+  }
+#main_container{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+#main{
+
+background: rgb(254,252,253); /* Old browsers */
+background: -moz-linear-gradient(90deg,  rgb(254,252,253) 99%, rgb(245,245,245) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left , right , color-stop(99%,rgb(254,252,253)), color-stop(100%,rgb(245,245,245))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(90deg,  rgb(254,252,253) 99%,rgb(245,245,245) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(90deg,  rgb(254,252,253) 99%,rgb(245,245,245) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(90deg,  rgb(254,252,253) 99%,rgb(245,245,245) 100%); /* IE10+ */
+background: linear-gradient(90deg,  rgb(254,252,253) 99%,rgb(245,245,245) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(254,252,253)', endColorstr='rgb(245,245,245)',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+padding-left:60px;
+padding-right:40px;
+padding-top:30px;
+font-size:15px;
+font-family: 'Open Sans', sans-serif;
+max-width: 900px;
+margin: 0 auto;
+}
+
+
+.vline{
+  border-left-color: rgb(255,230,230);
+  border-left-style: solid;
+  border-left-width: 0.1px;
+  height: 0px;
+  position: absolute;
+  left: 18%;
+  top: 205px;
+  width=100%;
+  display: : none;
+}
+hr.fancy-line{
+  border:  0px;
+  height: 1px;
+  width:0%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: -35px;
+  /*display: none;*/
+  background-image: -webkit-linear-gradient(left, rgba(20, 0, 255, 0.1), rgba(20, 0, 255, 0.00), rgba(20, 0, 255, 0.01), rgba(20, 0, 255, 0.01));
+  background-image:    -moz-linear-gradient(left, rgba(20, 0, 255, 0.1), rgba(20, 0, 255, 0.00), rgba(20, 0, 255, 0.01), rgba(20, 0, 255, 0.01));
+  background-image:     -ms-linear-gradient(left, rgba(20, 0, 255, 0.1), rgba(20, 0, 255, 0.00), rgba(20, 0, 255, 0.01), rgba(20, 0, 255, 0.01));
+  background-image:      -o-linear-gradient(left, rgba(20, 0, 255, 0.1), rgba(20, 0, 255, 0.00), rgba(20, 0, 255, 0.01), rgba(20, 0, 255, 0.01)); 
+
+}
+.authors{
+   /* width: 520px;
+    max-width: 10020px;*/
+    display: block;
+        color: rgb(80,80,80);
+        padding-bottom: 3px;
+}
+.hi{
+  font-size: 101%;
+  color:rgb(0,10,0);
+}
+.rotate{
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+a{
+  color:rgb(00,60,90);
+  font-weight:bold
+}
+a:hover{
+  color:rgb(70,100,140);
+}
+.heading{
+	font-size:150%;
+	font-weight:bold;
+	color:rgb(0,10,30);
+	margin-bottom:10px;
+}
+.paper-size-tooltip{
+  font-size:90%;
+  padding:4px;
+  margin:0px;
+  border:none;
+  background-color:rgb(100,180,255);
+  color:white;
+  filter:alpha(opacity=95);
+  opacity:0.95;
+}
+.teaser-text-tooltip
+{
+  font-size:80%;
+
+  margin:0px;
+  border:none;
+
+  color:white;
+  background:rgb(0,30,20);
+  filter:alpha(opacity=85);
+  opacity:0.85;
+
+
+  color:white;
+  /*background-color:rgb(246,245,244);*/
+
+  padding:8px;
+  box-shadow: none;
+
+  /*max-width:none;*/
+
+  -moz-border-radius-bottomleft: 15px;
+
+  -webkit-border-bottom-left-radius: 15px;
+
+
+  -moz-border-radius: 15px;
+
+  -webkit-border-radius: 15px;
+
+  /*border-radius: 15px;*/
+
+  background:-webkit-radial-gradient(rgb(0,30,20),rgb(0,30,20),black);
+  background:-o-radial-gradient(rgb(0,30,20),rgb(0,30,20),black);
+  background:-moz-radial-gradient(rgb(0,30,20),rgb(0,30,20),black);
+}
+.teaser{
+  width: 180px;
+  padding:5px;
+  float:left;
+  -moz-border-radius:15px;
+  -webkit-border-radius: 15px;
+  -webkit-transition: background 5s ;
+  -moz-transition: background 5s ;
+  -ms-transition: background 5s ;
+  -o-transition: background 5s ;
+  transition: background 5s ease;
+  max-width:100%;
+max-height:100%;
+	/*border-left:solid;
+	border-width:1px;
+	border-color:transparent;*/
+	margin-right:10px;
+
+}
+.teaser:hover{
+
+  background:-webkit-radial-gradient(rgb(202,201,200),rgb(246,245,244),rgb(255,255,255));
+  background:-o-radial-gradient(rgb(246,245,244),rgb(246,245,244),rgb(202,201,209));
+  background:-moz-radial-gradient(rgb(246,245,244),rgb(246,245,244),rgb(202,201,209));
+
+  }
+  .paper-data{
+    padding-top: 2px;
+    /* font-size: 95%; */
+    /* color: rgb(50,50,50); */
+    max-width: 609PX;
+
+  }
+  .graph-paper{
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+    background-image: -webkit-linear-gradient(blue 2px, transparent 2px),
+    -webkit-linear-gradient(0, blue 2px, transparent 2px),
+    -webkit-linear-gradient(rgba(240,240,255,1) 1px, transparent 1px),
+    -webkit-linear-gradient(0, rgba(240,240,255,1) 1px, transparent 1px);
+    background-image: -moz-linear-gradient(white 2px, transparent 2px),
+    -moz-linear-gradient(0, white 2px, transparent 2px),
+    -moz-linear-gradient(rgba(240,240,255,1) 1px, transparent 1px),
+    -moz-linear-gradient(0, rgba(240,240,255,1) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(250,240,255,1) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(240,240,255,1) 2px, transparent 2px),
+    linear-gradient(rgba(240,240,255,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240,240,255,1) 1px, transparent 1px);
+    -pie-background: linear-gradient(white 2px, transparent 2px) -2px -2px / 100px,
+    linear-gradient(90deg, white 2px, transparent 2px) -2px -2px / 100px,
+    linear-gradient(rgba(240,240,255,1) 1px, transparent 1px) -1px -1px / 20px,
+    linear-gradient(90deg, rgba(240,240,255,1) 1px, transparent 1px) -1px -1px / 20px,
+    #269;
+    behavior: url(/pie/PIE.htc);
+
+  }
+  .lined-paper{
+    background-color: #fff;
+    background-size: 100% 1.2em;
+    background-image: -webkit-linear-gradient(0deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+    -webkit-linear-gradient(#eee .05em, transparent .05em);
+    background-image: -moz-linear-gradient(0deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+    -moz-linear-gradient(#eee .05em, transparent .05em);
+    background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+    linear-gradient(#eee .05em, transparent .05em);
+    -pie-background: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px) 0 0 / 100% 1.2em,
+    linear-gradient(#eee .05em, transparent .05em) 0 0 / 100% 1.2em #fff;
+    behavior: url(/pie/PIE.htc);
+  }
+  .cubes{
+    background-color:#556;
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    background-image: -webkit-linear-gradient(60deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    -webkit-linear-gradient(-60deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    -webkit-linear-gradient(60deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    -webkit-linear-gradient(-60deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    -webkit-linear-gradient(30deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a),
+    -webkit-linear-gradient(30deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
+    background-image: -moz-linear-gradient(60deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    -moz-linear-gradient(-60deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    -moz-linear-gradient(60deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    -moz-linear-gradient(-60deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+    -moz-linear-gradient(30deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a),
+    -moz-linear-gradient(30deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
+    background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445) 0 0,
+    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445) 0 0,
+    linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445) 40px 70px,
+    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445) 40px 70px,
+    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a) 0 0,
+    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a) 40px 70px / 80px 140px;
+    -pie-background: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445) 0 0 / 80px 140px,
+    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445) 0 0 / 80px 140px,
+    linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445) 40px 70px / 80px 140px,
+    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445) 40px 70px / 80px 140px,
+    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a) 0 0 / 80px 140px,
+    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a) 40px 70px / 80px 140px,
+    #556;
+    behavior: url(/pie/PIE.htc);
+  }

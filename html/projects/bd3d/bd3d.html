@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Injective and Bounded Distortion Mappings in 3D - project page</title>
+    <link type="text/css" rel="stylesheet" href="../../JS/prettify-matlab/css/prettify.css" />
+    <link type="text/css" rel="stylesheet" href="../../JS/prettify-matlab/css/lang-matlab.css" />
+    <link type="text/css" rel="stylesheet" href="../../JS/prettify-matlab/css/switch_lang.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/main.css" />
+    <script type="text/javascript" src="../../JS/prettify-matlab/js/prettify.js"></script>
+    <script type="text/javascript" src="../../JS/prettify-matlab/js/lang-matlab.js"></script>
+    <script type="text/javascript" src="../../JS/prettify-matlab/src/_switch_lang.js"></script>
+    <script type="text/javascript" src="../../JS/jquery.min.js"></script>
+    <script type="text/javascript" src="../../JS/setMail.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            // apply syntax highlighting
+            prettyPrint();
+            setMail();
+        });
+    </script>
+    <style type="text/css">
+        table.gridtable
+        {
+            color: #333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+        }
+        table.gridtable th
+        {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+        table.gridtable td
+        {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
+        h1.count
+        {
+            counter-reset: subsection;
+        }
+        img
+        {
+            border: 1px solid;
+            
+        }
+        h1.count:before
+        {
+            counter-increment: section;
+            content: counter(section) ". ";
+        }
+        
+        h2.count:before
+        {
+            counter-increment: subsection;
+            content: counter(section) "." counter(subsection) " ";
+        }
+        #menu
+        {
+            position: fixed;
+            top: 10px;
+            right: 1%;
+            background-color:white;
+            padding: 20px;
+            
+            float: left;
+        }
+        
+        body
+        {
+            counter-reset: section;
+            
+        }
+        .round-corner
+        {
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+        pre
+        {
+            overflow: auto;
+            background-color: White;
+        }
+        .shadow
+        {
+            box-shadow: 3px 3px 5px 3px #ccc;
+        }
+        .table-image
+        {
+            height: 200px;
+            max-width:inherit;
+            border-style: solid;
+            border-width: 1px;
+            margin: 5px;
+            padding: 10px;
+        }
+        .table-caption
+        {
+            width: 1px;
+            font-size: 18px;
+        }
+        a:HOVER
+        {
+            color: rgb(50,150,220);
+        }
+        .img-container
+        {
+            display: table;
+            width:1px;
+            text-align:center;
+            font-size:14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu" class="round-corner shadow">
+        <div style="font-size:150%;font-weight:bold;text-decoration:underline">Content</div>
+        <a href="#abstract">Abstract</a><br/>
+        <a href="#paper">Paper </a><br/>
+        <a href="#code">Code</a><br/>
+        <a href="#data">Data</a><br/>
+        <a href="#bibtex">Bibtex</a>
+    </div>
+    <div id="main">
+        <h1 align="center">
+            Injective and Bounded Distortion Mappings in 3D: Project Page</h1>
+        <table align="center" style="font-size:22px;">
+            <tbody>
+                <tr align="center">
+                    <td colspan="2">
+                    </td>
+                </tr>
+                <tr align="center" >
+                    <td>
+                        <a href="../../../">Noam Aigerman </a>
+                    </td>
+                    <td>
+                        <a href="http://www.wisdom.weizmann.ac.il/~ylipman/">Yaron Lipman </a>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <td colspan="2">
+                        SIGGRAPH 2013
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+        <br/>
+        <br/>
+		
+        <div style="display:table;margin:auto">
+                <div style="float:left" class="img-container"> 
+                        <img src="bd3d.jpg" class="table-image"><br />
+                        A globally bijective, bounded-distortion mapping of a volumetric mesh to a polycube.
+                </div>
+                <div style="float:left" class="img-container">
+                        <img src="toy_noam.jpg" class="table-image">
+                        <br />
+                        Approximating a deformation with a bounded-distortion map.
+                </div>
+                <div style="float:left" class="img-container">
+                        <img src="final_volume_lowres_noam.jpg" class="table-image">
+                        <br />
+                        Improving the maximal aspect-ratio distortion of a tetrahedral mesh.
+                </div>
+                <div style="clear:both"></div>         
+        </div>
+		<br>
+		<div>
+		<iframe style="float:left" width="48%" height="360" src="http://www.youtube.com/embed/VJgjvkwYQ5s?rel=0" frameborder="2" allowfullscreen></iframe>
+		<iframe  style="float:right" width="48%" height="360" src="http://www.youtube.com/embed/WoGSoIDlY-4?rel=0" frameborder="2" allowfullscreen></iframe>
+        </div>
+		<div style="clear:both"></div>
+        <h1 class="count"><a id="abstract">Abstract</a></h1>
+        We introduce an efficient algorithm for producing provably injective mappings of
+        tetrahedral meshes with strict bounds on their tetrahedra aspect-ratio distortion.
+        The algorithm takes as input a simplicial map (e.g., produced by some common deformation
+        or volumetric parameterization technique) and projects it on the space of injective
+        and bounded distortion simplicial maps. Namely, finds a similar map that is both
+        bijective and bounded-distortion. As far as we are aware, this is the first algorithm
+        to produce injective or bounded-distortion simplicial maps of tetrahedral meshes.
+        The construction of the algorithm was made possible due to a novel closed-form solution
+        to the problem of finding the closest orientation-preserving bounded-distortion
+        matrix to an arbitrary matrix in three (and higher) dimensions. The algorithm is
+        shown to have quadratic convergence, usually not requiring more than a handful of
+        iterations to converge. Furthermore, it is readily generalized to simplicial maps
+        of any dimension, including mixed dimensions. Finally, it can deal with different
+        distortion spaces, such as bounded isometric distortion. During experiments we found
+        the algorithm useful for producing bijective and bounded-distortion volume parameterizations
+        and deformations of tetrahedral meshes, and improving tetrahedral meshes , increasing
+        the tetrahedra quality produced by state-of-the-art techniques. 
+        
+        <h1 class="count"><a id="paper">Paper</a></h1>
+        <div style="display:table">
+                <div style="float:left;margin:20px" class="img-container">
+                        <a href="bd3d.pdf">High resolution version<br />
+                        <img src="paper.jpg" style="border-style: solid; border-width: 1px">
+                        </a>
+                </div>
+                
+                 <div style="float:left;margin:20px" class="img-container">
+                        <a href="bd3d_lowres.pdf">Low resolution version<br />
+                        <img src="paper.jpg" style="border-style: solid; border-width: 1px">
+                        </a>
+                </div>
+				<!-- <div style="float:left;margin:20px" class="img-container">
+                        <a href="bd3d.pptx">slides<br />
+                        <img src="ppt_small.png" style="border-style: solid; border-width: 1px">
+                        </a>
+                </div> -->
+                <div style="clear:both"></div>         
+        </div>
+        
+        
+        
+        <h1 class="count"><a id="code">Code</a></h1>
+            <h2 class="count">Download</h2>
+            <a href="https://github.com/noamaig/3D_BD_SIGGRAPH2013">Download the matlab code here</a>. For questions, requests or feedback, email <span class="emailplace"></span>.
+            <h2 class="count">Usage</h2>
+            The usage is rather simple (See also the attached README). The main
+            function <tt>project_on_bd</tt> accepts the list of tetrahedras <tt>tri</tt>, the
+            source positions <tt>X_source</tt> and the target positions <tt>X_target</tt> (defining
+            the initial simplicial map), the required distortion bound <tt>K</tt>, and possibly
+            more optional arugments, such as positional constraints. The function returns (if
+            converges) the positions <tt>X_new</tt>, such that the bounded-distortion map maps
+            <tt>X_source</tt> to <tt>X_new</tt>. An example is given in <tt>script_example_projection.m</tt> 
+            (see elaboration on the input arguments for <tt>project_on_bd</tt> in the <a href="#data">data</a> 
+            section, and also the in the function's documentation):
+            <pre class="prettyprint lang-matlab">
+<code>%load data 
+load('elephant_stand_5.mat'); 
+
+%run the projection 
+X=project_on_bd(X_source,X_target,tri,K,constraint_matrix,constraint_rhs);</code>
+</pre>
+       
+       
+           <h2 class="count">Mesh Improver</h2> We also include a mesh-optimizer, as described in Section
+            5.3 in the paper. Its usage is also straightforward; To use it, call the function
+            <tt>improve_mesh</tt>, with the list of tetrahedra <tt>T</tt> and the initial positions
+            of the vertices, <tt>X</tt>, the aspect-ratio <tt>K</tt>, and the optional argument
+            <tt>constrain_boundary</tt>, which if given and equal to 1, means the boundary of
+            the mesh is constrained in place. An exmaple is given in <tt>script_example_improve.m</tt>:
+            <pre class="prettyprint lang-matlab"><code>% load a mesh. We will only use X_source (the original vertices' 
+% location) and tri. 
+load('elephant_stand_5.mat'); 
+
+%improve the mesh's tets to have maximal aspect-ratio distortion of 5 
+newX=improve_mesh(X_source,tri,5); </code>
+</pre>
+       
+            <h2 class="count">Viewer</h2> Lastly, as simply vieweing the boundary of a voluemtric mesh is
+            not enough to fully understand how the interior is mapped, we also supply a simple volumetric viewer. To
+            use it call the function <tt>cross_section_app</tt> with the <tt>OPTIONS</tt> struct
+            returned from the projection\improvement functions, as so:
+            <pre class="prettyprint lang-matlab"><code>%load data 
+load('elephant_stand_5.mat'); 
+
+%run the projection, get also the OPTIONS output var 
+[X,OPTIONS]=project_on_bd(X_source,X_target,tri,K,constraint_matrix,constraint_rhs);
+
+%open the viewer 
+cross_section_app(OPTIONS); </code></pre>
+            <img src="viewer.png"><br /><br />
+            A plane cuts the mesh and displays its interior, coloring tets according to the
+            color scheme in the paper (redness=amount of distortion, yellow tet=inverted). Drag
+            the mouse while holding the right key to sweep through the mesh to cut it at different
+            positions; Drag while holding the left key to change the orientation of the cutting-plane.
+            The main options of the viewer are described in the following image:<br /><br />
+            <img src="viewer_buttons.jpg"><br /><br />
+            Aside from 7 & 8, most options are unnecessary if one wishes to simply inspect the mappping, and most of them are
+            intuitive - just try and play with them. They are:<br/>
+            1. Enable control over the display type (must be toggled to control all over parameters).<br/>
+            2+3+4. Clamp the normal of the cutting plane to one of the main axis.<br/>
+            5. Invert the normal of the cutting plane.<br/>
+            6. Apply the cut according to the source mesh's vertices' positions or the target
+            mesh's.<br/>
+            <b>7. Display the initial mapping or the final (projected) mapping (default=the projected map).<br/>
+            8. Display only "bad" tets, i.e. inverted or above the assigned distortion bound.</b><br/>
+            9. Swap between the source mesh and the target mesh, in case you want to see how
+            the source mesh looks like.<br/><br />
+            E.g., to view all the "bad" tets in the initial mapping, toggle both 8 and 7.
+     
+        <h1 class="count"><a id="data">Datasets</a></h1>
+        
+            <h2 class="count">Download</h2><a href="data.zip">Download datasets used in the paper here</a>.
+     
+            <h2 class="count">Data Contents</h2> Each <tt>.mat</tt> file contains data for a specific mesh & map.
+            The variables stored in the <tt>.mat</tt> file are: <br /><br />
+            <table class="gridtable">
+                <tbody>
+                    <tr align="left">
+                        <th>
+                            Variable name
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Dimensions
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <tt>X_source </tt>
+                        </td>
+                        <td>
+                            The mesh's vertex positions. The i'th row contains the 3 coordinates of the i'th
+                            vertex.
+                        </td>
+                        <td>
+                            n&times3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <tt>X_target </tt>
+                        </td>
+                        <td>
+                            The initial mapping of the vertex positions (the initial map).
+                        </td>
+                        <td>
+                            n&times3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <tt>tri </tt>
+                        </td>
+                        <td>
+                            The tetrahedra. The i'th row contains the 4 indices of the vertices of the i'th
+                            tetrahedron.
+                        </td>
+                        <td>
+                            m&times4
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <tt>K </tt>
+                        </td>
+                        <td>
+                            The distortion bound used in our algorithm.
+                        </td>
+                        <td>
+                            scalar
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <tt>constraint_matrix </tt>
+                        </td>
+                        <td>
+                            The matrix of positional constraints.
+                        </td>
+                        <td>
+                            r&times3n (The number of rows r determined by number of constraints)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <tt>constraint_rhs </tt>
+                        </td>
+                        <td>
+                            The rhs of the positional constraints.
+                        </td>
+                        <td>
+                            r&times1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <tt>X_projected </tt>
+                        </td>
+                        <td>
+                            The final mapping of the vertex positions (the projected map).
+                        </td>
+                        <td>
+                            n&times3
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            See the <a href="#code">code</a> section on how to run the loaded data.
+            <h2 class="count">Included Experiments</h2> The data is divided to folders according to the type of
+            the experiment:<br /><br />
+            <table class="gridtable">
+                <tbody>
+                    <tr align="left">
+                        <th>
+                            Folder name
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Section in paper
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <tt>deformations</tt>
+                        </td>
+                        <td>
+                            Bounded-distortion projections of deformations of mehses.
+                        </td>
+                        <td>
+                            5.1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <tt>polycubes</tt>
+                        </td>
+                        <td>
+                            Bounded-distortion mappings of voloumetric meshes to polycube structures.
+                        </td>
+                        <td>
+                            5.2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <tt>improvement</tt>
+                        </td>
+                        <td>
+                            Mesh-improvement of various meshes. To be used with the mesh-improver (see the <a href="#code">code</a> section).
+                        </td>
+                        <td>
+                            5.3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <tt>isometry</tt>
+                        </td>
+                        <td>
+                            A variation of a our algorithm: projection of a deformation on the bounded isometric distortion space.
+                        </td>
+                        <td>
+                            5.4 (2nd paragraph)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <tt>2D</tt>
+                        </td>
+                        <td>
+                            Examples of our algorithm applied in 2D, to LSCM and ARAP mappings.
+                        </td>
+                        <td>
+                            5.5 (last paragraph)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+           <h1 class="count"><a id="bibtex">BibTex</a></h1>
+           <pre>@article{Aigerman:bd3d:2013,
+author = {Noam Aigerman and Yaron Lipman},
+title = {Injective and Bounded Distortion Mappings in 3D},
+journal = {ACM Transactions on Graphics (proceedings of ACM SIGGRAPH)},
+volume = {32},
+number = {4},
+year = {2013},
+pages = {106:1--106:14},
+}</pre>
+    </div>
+</body>
+</html>

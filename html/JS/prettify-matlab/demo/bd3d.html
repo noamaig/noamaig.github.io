@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="/pages/sites/weizmann.ac.il.pages/themes/weizmann/favicon.ico" type="image/x-icon" />
+<title>Injective and Bounded Distortion Mappings in 3D - project page</title>
+
+		<link type="text/css" rel="stylesheet" href="css/prettify.css" />
+		<link type="text/css" rel="stylesheet" href="../css/lang-matlab.css" />
+		<link type="text/css" rel="stylesheet" href="../css/switch_lang.css" />
+		
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/prettify.js"></script>
+		<script type="text/javascript" src="../js/lang-matlab.js"></script>
+		<script type="text/javascript" src="../src/_switch_lang.js"></script>
+<script type="text/javascript">
+		jQuery(document).ready(function () {
+			// apply syntax highlighting
+			prettyPrint();
+
+			
+		});
+		</script>
+<style>
+body{font-family:  Helvetica,Arial, sans-serif;
+   font-weight: 300;
+font-size: 16px;
+background-color:rgb(240,240,253);
+color: rgb(20,10,0);}
+.round-corner{
+-moz-border-radius: 15px;
+border-radius: 15px;
+}
+.shadow {
+  
+  box-shadow:         3px 3px 5px 3px #ccc;
+}
+.table-image{
+height:200px;
+border-style:solid;
+border-width:1px;
+margin:5px;
+padding:10px;
+}
+.table-caption{
+	width:1px;
+	font-size:18px;
+}
+a:HOVER{
+   color:rgb(50,150,220);
+}
+</style>
+</head>
+<body>
+
+<div style="position:fixed; top:40px;left:40px;background-color:rgb(255,253,250);padding:20px;font-size: 100%" class="round-corner shadow">
+<h2>Content</h2>
+<a href="#abstract">Abstract</a><br>
+<a href="#paper">Paper</a><br>
+<a href="#code">Code</a><br>
+<a href="#data">Data</a><br>
+<a href="#bibtex">Bibtex</a>
+
+</div>
+<div style="width:60%; margin-left:auto;
+margin-right:auto;
+background-color:rgb(255,253,252);padding:30px;"
+class="round-corner shadow">
+<h1 align="center">Injective and Bounded Distortion Mappings in 3D</h1>
+<table align="center">
+<tbody>
+<tr align="center">
+<td colspan=2></td>
+</tr>
+<tr align="center" >
+<td>
+<a href="../../">
+Noam Aigerman
+</a>
+</td>
+<td>
+<a href="http://www.wisdom.weizmann.ac.il/~ylipman/">
+Yaron Lipman
+</a>
+</td>
+</tr>
+<tr align="center">
+<td colspan=2>Siggraph 2013</td>
+</tr>
+</tbody>
+</table>
+
+
+<br><br><br>
+<table align="center" >
+<tbody>
+<tr>
+<td> <img src="bd3d.jpg" class="table-image"></td>
+<td> <img src="toy_noam.jpg" class="table-image"></td>
+<td><img src="final_volume_lowres_noam.jpg" class="table-image"> </td>
+</tr>
+<tr align="center">
+<td class="table-caption">A globally bijective, bounded-distortion mapping of a volumetric mesh to a polycube.</td>
+<td class="table-caption">Approximating a deformation with a bounded-distortion map.</td>
+<td class="table-caption">Improving the maximal aspect-ratio distortion of a tetrahedral mesh.</td>
+</tr>
+</tbody>
+</table>
+<a name="abstract"></a>
+<h1>
+Abstract
+</h1>
+We introduce an efficient algorithm for producing provably injective
+mappings of tetrahedral meshes with strict bounds on their
+tetrahedra aspect-ratio distortion.
+The algorithm takes as input a simplicial map (e.g., produced by
+some common deformation or volumetric parameterization technique)
+and projects it on the space of injective and boundeddistortion
+simplicial maps. Namely, finds a similar map that is both
+bijective and bounded-distortion. As far as we are aware, this is the
+first algorithm to produce injective or bounded-distortion simplicial
+maps of tetrahedral meshes. The construction of the algorithm
+was made possible due to a novel closed-form solution to the problem
+of finding the closest orientation-preserving bounded-distortion
+matrix to an arbitrary matrix in three (and higher) dimensions.
+The algorithm is shown to have quadratic convergence, usually not
+requiring more than a handful of iterations to converge. Furthermore,
+it is readily generalized to simplicial maps of any dimension,
+including mixed dimensions. Finally, it can deal with different distortion
+spaces, such as bounded isometric distortion. During experiments
+we found the algorithm useful for producing bijective and
+bounded-distortion volume parameterizations and deformations of
+tetrahedral meshes, and improving tetrahedral meshes , increasing
+the tetrahedra quality produced by state-of-the-art techniques.
+
+<a name="paper"></a>
+<h1>Paper</h1>
+<a href="...">Download the paper <br><img src="paper.jpg" style="border-style:solid;border-width:1px"></a>
+<a name="code" ></a>
+<h1>Code</h1>
+Download the matlab code <a href="...">here</a>.<br>
+Its usage is rather simple (See also the attached README). The main function <tt>project_on_bd</tt> accepts the list of tetrahedras <tt>tri</tt>, 
+the source positions <tt>X_source</tt> and the target positions <tt>X_target</tt> (defining the initial simplicial map), 
+the required distortion bound <tt>K</tt>, and possibly more optional arugments, such as positional constraints. 
+The function returns (if converges) the positions <tt>X_new</tt>, such that the bounded-distortion map maps <tt>X_source</tt> to <tt>X_new</tt>. 
+An example is given in <tt>script_example_projection.m</tt>:
+<pre class="prettyprint lang-matlab">
+<code>
+i=1;
+if i==2
+   i=1;
+end
+while(1)
+   a=5;
+end
+% noam test
+% another tet
+</code>
+</pre>
+We also include a mesh-optimizer, as described in Section 5.3 in the paper. Its usage is also straight-forward; To use it, call the function
+<tt>improve_mesh</tt>, with the list of tetrahedra <tt>T</tt> and the initial positions of the vertices, <tt>X</tt>, the aspect-ratio <tt>K</tt>, 
+and the optinal argument <tt>constrain_boundary</tt>, which if given and equal to 1, means the boundary of the mesh is constrained in place. An 
+exmaple is show in <tt>script_example_improve.m</tt>:
+<pre class="prettyprint lang-matlab">
+<code>
+i=1;
+if i==2
+   i=1;
+end
+while(1)
+   a=5;
+end
+
+%noam test
+
+%%%%%another tet
+</code>
+</pre>
+Lastly, as simply vieweing the boundary of the voluemtric mesh is not enough to fully comprehend the nature of volumetric mappings, 
+we also supply a simple viewer. To use it:
+<pre>
+...
+</pre>
+A plane cuts the mesh and displays its interion. Drag the mouse while holding the right key to sweep through the mesh to cut 
+it at different positions. Drag while holding the left key to change the orientation of the cutting-plane.
+The main options of the viewer are described in the following image:
+<img src="...">
+<a name="data"></a>
+<h1>Data</h1>
+Download datasets used in the paper <a href="...">here</a>.<br>
+<!--Below is the data of several of the examples in the paper.
+<table border="1px">
+<tbody>
+<tr><th>Deformations</th></tr>
+
+<tr><th>Polycubes</th></tr>
+<tr><th>Mesh Improvement</th></tr>
+</tbody>
+</table>
+-->
+To load the data and use it with the code (to run the mesh-improvement examples, use the aforementioned mesh-improvement script):
+<pre class="prettyprint lang-m">
+<code>
+i=1;
+if i==2
+   i=1;
+end
+while(1)
+   a=5;
+end
+%noam test
+%another tet
+</code>
+</pre>
+
+</div>
+
+</body>
+</html>

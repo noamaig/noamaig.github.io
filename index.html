@@ -1,0 +1,243 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Noam Aigerman's Homepage</title>
+
+		<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css"/>
+	-->
+	<script type="text/javascript" src="html/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="html/jquery/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="html/jquery/jquery-ui.min.css"/>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="html/JS/setMail.js?2"></script>
+	
+	<script type="text/javascript">  
+		function setVline(e){
+			a=$('.vline').first();
+			p=$('.paper-entry').last();
+			t=a.offset().top;
+			b=p.offset().top + p.outerHeight(true);
+			a.height(b-t-20);
+			a.css("left",  p.position().left-20);
+
+		}
+		$(window).resize(setVline);
+		function setTooltip(){
+			$('.paper-link').each(
+				function(){
+
+					$(this).tooltip({tooltipClass:'paper-size-tooltip',content: function() {
+						var element = $( this );
+						if ( element.is( "[data-size]" ) ) {
+							return element.attr( "data-size" )+ ' MB';
+						}
+
+					},'position':{my: 'center bottom', at: 'center top',of:$(this)}, hide: {duration:50},show:{duration:10},items:'a'});
+
+				}
+				);
+
+
+			
+			$('.teaser').each(
+				function(){
+				var parent=$(this);//.parent();
+				$(this).tooltip({
+
+
+
+					'position':{my: 'left top', at: 'left bottom',of:$(this)}, hide: {duration:0},tooltipClass:'teaser-text-tooltip',
+					content: '<div style="background-color:rgba(255,255,255,0);">'+$(this).attr('title')+'<hr style=color:white;"><span style="font-size:85%;color:rgb(230,230,230)"><span style="text-decoration:underline">Figure:</span> '+$(this).attr('alt')+'</span></div>'
+
+				});
+
+			}
+			);
+			$('.paper-data > a').attr("target","_blank");
+
+
+
+
+			
+			
+			
+			
+
+		}
+
+		function setEaster(){
+			fadeouttime=500;
+			fadeintime=6000;
+			$('#mepic').hover(
+				
+				function(){
+
+					$('#me2d').stop().animate({'opacity':0},fadeintime);
+					$('#me2d').promise().done(function(){$('#me3d').stop().animate({'opacity':1},fadeouttime);});
+
+
+				//$('#me2d').promise().done(function(){$(this).css('display','none');$('#me3d').css('display','inline');});
+				
+				
+			},
+			function(){$('#me2d').stop().animate({'opacity':1},fadeouttime);
+			$('#me3d').stop().animate({'opacity':0},fadeouttime);
+		}
+
+		);
+
+			$('#me3d').attr('src','pics/me3d.png');
+		}
+		function setOpacity(){
+			return;
+			hideopa=0.7;
+			fadeint=200;
+			fadeoutt=500;
+			//$('.teaser').css('opacity', opa);  
+
+// when hover over the selected image change the opacity to 1  
+
+$('.teaser').hover(  
+	function(){  
+		$('.teaser').parent().stop().animate({'opacity':hideopa},fadeint); /*,'background-color':'none'*/
+		$(this).parent().stop().animate({'opacity':1},fadeint);/*,'background-color':'rgb(246,245,244)'*/
+
+	},  
+	function(){  
+		$('.teaser').parent().stop().animate({'opacity':1},fadeoutt)/*,'background-color':'none'*/
+	});  
+
+}
+function setYears(){
+	$('li.paperyear').each(function(){
+		var element = $( this );
+		if ( element.is( "[year]" ) ) {
+			element.prepend('<hr class="fancy-line"></hr><div class="tab">'+element.attr('year')+"</div>")
+		}
+	});
+}
+</script>
+
+<script type="text/javascript" src="html/JS/tracking/track_clicks.js"></script>
+<link rel="stylesheet" type="text/css" href="html/css/main.css"/>
+
+</head>
+
+<body onload="setMail();setTooltip();setOpacity();
+
+
+
+setVline();
+$('.vline').hide();
+$('.vline').slideDown(1200);
+//setYears();
+
+
+$('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
+
+	width:'100%'
+},500);
+});
+" >
+<div id = "main_container">
+<div id="main" >
+	<div>
+
+		<div style="float:left;margin-right:1%">
+			<div id="mepic">
+				<img id="me2d" src="pics/weizmann.jpg" style="width:110px;position:absolute;margin-left:10px" alt="Yes, this is I!"  class="round-corner" />
+				<img id="me3d" style="width:130px;opacity:0;position:absolute" alt="Yes, this is I (in 3D!)"   />
+				<img  src="pics/me3d.png" style="width:130px;visibility:hidden"  />
+			</div>	
+		</div>
+		<div >
+			<div class="heading">Noam Aigerman <span style="font-size: 40%">   Pronounced "Noh-uhm", like Noah with an M at the end.</span><br/><span style="font-size: 80%">Research Scientist, Adobe Research</span></div>
+			<div style="font-size:98%">
+
+				<span class="emailplace">lastname@adobe.com</span>
+				<br/>
+				<br/> My research lies within the areas of geometry processing, computer graphics, deep learning, optimization, and the intersection between them.
+		
+			</div>
+		</div>
+	</div>
+	<br/>
+
+	<div style="clear:both">
+
+
+	</div>
+	<div class="vline" > </div>
+	<hr class="fancy-line"/>
+		<!--<div class="heading">Teaching</div>
+		2016: Minicourse on computational aspects of mappings at the <a href= "http://www.geometrysummit.org/summerschool/program.html">IGS summer school</a>.<br> 
+		2015: Co-organizing the Seminar on Advanced Topics in Optimization with Shahar Kovalsky.<br>
+		2013: TA for "Numerical Linear Algebra and Convex Optimization".
+		<hr class="fancy-line" />-->
+		<div id="pub">
+			<span class="heading">Publications</span>
+			<span style="color:rgb(100,150,180)">(hover over a project's image for a one-sentence summary)</span>
+			<ol style="padding:0px;list-style-type:none">
+				<li class="paperyear" year="2022">
+					<ol>
+						
+					{% for item in site.data.papers %}
+					    <!-- <a href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
+					      {{ item.name }}
+					    </a> -->
+					    <li class="paper-entry">
+
+							<img alt="{{ item.img_alt }}" class="teaser" src="{{ item.img }}"  title="{{ item.explanation }}"/>
+
+							<div class="paper-cell">
+								<b>{{ item.title }}</b><br/>
+								<div class="paper-data"><span class="authors">{{ item.authors }}</span>
+								{{ item.venue }}
+								<br/> 
+								{% for link in item.links %}
+									<a  href="{{ link[1] }}">{{ link[0] }}</a> {% unless forloop.last %} | {% endunless %}
+									
+								{% endfor %}
+								</div>
+							</div>
+							<div style="clear:left;"></div>
+						</li>
+
+
+				  {% endfor %}
+				
+			</ol>
+		</li>
+			<hr class="fancy-line"/>
+
+			<div class="heading">Others</div>
+			<ol>	
+				<li class="paper-entry">
+
+					<img alt="A deformation of a bar." class="teaser" src="html/projects/IGS2016/teaser.jpg"  title="A course on practical aspects of map-computation."/>
+
+					<div class="paper-cell">
+						<b>Computational Aspects of Mappings</b><br/>
+						<div class="paper-data">
+							Tutorial given at the IGS 2016 summer school (with Shahar Kovalsky)
+							<br/>  <a class="paper-link" data-size="15" href="html/projects/IGS2016/slide.pdf">Slides (pdf)</a> 
+						</div>
+
+					</div>
+					<div style="clear:left;"></div>
+				</li>
+			</ol>
+		</li>
+	</ol>
+</div>
+<a href="https://pbs.twimg.com/media/EoZdmz4XIAIYx16?format=jpg&name=large" target="_blank">Research, in a nutshell</a>
+</div>
+</div>
+
+</body>
+</html>
+
