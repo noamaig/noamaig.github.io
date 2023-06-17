@@ -198,10 +198,18 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 								<div class="paper-data"><span class="authors">{{ item.authors }}</span>
 								{{ item.venue }}
 								<br/> 
-								{% for link in item.links %}
-									<a  href="{{ link[1] }}">{{ link[0] }}</a> {% unless forloop.last %} | {% endunless %}
-									
-								{% endfor %}
+								{% if item.links %}
+							 
+							    	{% for link in item.links %}
+									<a  href="{{ link[1] }}">{{ link[0] }}</a> {% unless forloop.last %} | {% endunless %}	
+									{% endfor %}
+							    
+							    {% else %}
+							    [Coming soon...]
+							    
+								{% endif %}
+
+								
 								</div>
 							</div>
 							<div style="clear:left;"></div>
