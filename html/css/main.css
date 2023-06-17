@@ -157,10 +157,11 @@ hr.fancy-line{
     display: block;
         color: rgb(80,80,80);
         padding-bottom: 3px;
+    font-size: 13px;
 }
 .hi{
-  font-size: 101%;
-  color:rgb(0,10,0);
+/*  font-size: 14px;*/
+  color:rgb(0,00,80);
 }
 .rotate{
   -moz-transform: rotate(90deg);

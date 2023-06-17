@@ -4,11 +4,6 @@
 <html>
 <head>
 	<title>Noam Aigerman's Homepage</title>
-
-		<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css"/>
-	-->
 	<script type="text/javascript" src="html/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="html/jquery/jquery-ui.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="html/jquery/jquery-ui.min.css"/>
@@ -69,29 +64,29 @@
 
 		}
 
-		function setEaster(){
-			fadeouttime=500;
-			fadeintime=6000;
-			$('#mepic').hover(
+		// function setEaster(){
+		// 	fadeouttime=500;
+		// 	fadeintime=6000;
+		// 	$('#mepic').hover(
 				
-				function(){
+		// 		function(){
 
-					$('#me2d').stop().animate({'opacity':0},fadeintime);
-					$('#me2d').promise().done(function(){$('#me3d').stop().animate({'opacity':1},fadeouttime);});
+		// 			$('#me2d').stop().animate({'opacity':0},fadeintime);
+		// 			$('#me2d').promise().done(function(){$('#me3d').stop().animate({'opacity':1},fadeouttime);});
 
 
-				//$('#me2d').promise().done(function(){$(this).css('display','none');$('#me3d').css('display','inline');});
+		// 		//$('#me2d').promise().done(function(){$(this).css('display','none');$('#me3d').css('display','inline');});
 				
 				
-			},
-			function(){$('#me2d').stop().animate({'opacity':1},fadeouttime);
-			$('#me3d').stop().animate({'opacity':0},fadeouttime);
-		}
+		// 	},
+		// 	function(){$('#me2d').stop().animate({'opacity':1},fadeouttime);
+		// 	$('#me3d').stop().animate({'opacity':0},fadeouttime);
+		// }
 
-		);
+		// );
 
-			$('#me3d').attr('src','pics/me3d.png');
-		}
+		// 	$('#me3d').attr('src','pics/me3d.png');
+		// }
 		function setOpacity(){
 			return;
 			hideopa=0.7;
@@ -122,7 +117,7 @@ function setYears(){
 }
 </script>
 
-<script type="text/javascript" src="html/JS/tracking/track_clicks.js"></script>
+
 <link rel="stylesheet" type="text/css" href="html/css/main.css"/>
 
 </head>
@@ -173,29 +168,28 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 	</div>
 	<div class="vline" > </div>
 	<hr class="fancy-line"/>
-		<!--<div class="heading">Teaching</div>
-		2016: Minicourse on computational aspects of mappings at the <a href= "http://www.geometrysummit.org/summerschool/program.html">IGS summer school</a>.<br> 
-		2015: Co-organizing the Seminar on Advanced Topics in Optimization with Shahar Kovalsky.<br>
-		2013: TA for "Numerical Linear Algebra and Convex Optimization".
-		<hr class="fancy-line" />-->
+
 		<div id="pub">
 			<span class="heading">Publications</span>
 			<span style="color:rgb(100,150,180)">(hover over a project's image for a one-sentence summary)</span>
 			<ol style="padding:0px;list-style-type:none">
-				<li class="paperyear" year="2022">
-					<ol>
+				<!-- <li class="paperyear" year="2022">
+					<ol> -->
 						
 					{% for item in site.data.papers %}
-					    <!-- <a href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
-					      {{ item.name }}
-					    </a> -->
 					    <li class="paper-entry">
 
-							<img alt="{{ item.img_alt }}" class="teaser" src="{{ item.img }}"  title="{{ item.explanation }}"/>
+							<img alt="{{ item.img_alt | escape }}" class="teaser" src="{{ item.img }}"  title="{{ item.explanation | escape }}"/>
 
 							<div class="paper-cell">
 								<b>{{ item.title }}</b><br/>
-								<div class="paper-data"><span class="authors">{{ item.authors }}</span>
+								
+
+								<div class="paper-data">
+									<span class="authors">
+										{{ item.authors | replace: "Noam Aigerman", '<span class="hi">Noam Aigerman</span>' }}
+									</span>
+									
 								{{ item.venue }}
 								<br/> 
 								{% if item.links %}
@@ -214,12 +208,10 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 							</div>
 							<div style="clear:left;"></div>
 						</li>
-
-
-				  {% endfor %}
-				
+				  	{% endfor %}
+					<!-- </ol>
+				</li> -->
 			</ol>
-		</li>
 			<hr class="fancy-line"/>
 
 			<div class="heading">Others</div>
@@ -239,8 +231,8 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 					<div style="clear:left;"></div>
 				</li>
 			</ol>
-		</li>
-	</ol>
+	<!-- 	</li>
+	</ol> -->
 </div>
 <a href="https://pbs.twimg.com/media/EoZdmz4XIAIYx16?format=jpg&name=large" target="_blank">Research, in a nutshell</a>
 </div>
