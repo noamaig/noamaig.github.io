@@ -11,16 +11,16 @@
 	<script type="text/javascript" src="html/JS/setMail.js?2"></script>
 	
 	<script type="text/javascript">  
-		function setVline(e){
-			a=$('.vline').first();
-			p=$('.paper-entry').last();
-			t=a.offset().top;
-			b=p.offset().top + p.outerHeight(true);
-			a.height(b-t-20);
-			a.css("left",  p.position().left-20);
+		// function setVline(e){
+		// 	a=$('.vline').first();
+		// 	p=$('.paper-entry').last();
+		// 	t=a.offset().top;
+		// 	b=p.offset().top + p.outerHeight(true);
+		// 	a.height(b-t-20);
+		// 	a.css("left",  p.position().left-20);
 
-		}
-		$(window).resize(setVline);
+		// }
+		// $(window).resize(setVline);
 		function setTooltip(){
 			$('.paper-link').each(
 				function(){
@@ -126,9 +126,9 @@ function setYears(){
 
 
 
-setVline();
-$('.vline').hide();
-$('.vline').slideDown(1200);
+// setVline();
+// $('.vline').hide();
+// $('.vline').slideDown(1200);
 //setYears();
 
 
@@ -140,25 +140,33 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 " >
 <div id = "main_container">
 <div id="main" >
-	<div>
+	<div style="display: grid;">
+		<div style="grid-column: 1;">
+			
+			<div class = "fancy-border"><span class="heading">Noam Aigerman </span>
+				<span style="font-size: 0.6em;white-space: nowrap;">   (pronounced "Noh-uhm", like Noah with an M at the end.)</span>
+			
+			</div>
+			<div style="font-size:98%">
+				<span style="font-weight: bold;">Research Scientist, Adobe Research</span>
 
-		<div style="float:left;margin-right:1%">
+				
+				<br/>
+				<br/> My research lies within the areas of geometry processing, computer graphics, deep learning, optimization, and the intersection between them.
+			</div>
+			<div>
+				<br/>
+				<span class="emailplace">lastname@adobe.com</span>
+			</div>
+		</div>
+		<div style="margin-right:1%;grid-column: 2;">
 			<div id="mepic">
-				<img id="me2d" src="pics/weizmann.jpg" style="width:110px;position:absolute;margin-left:10px" alt="Yes, this is I!"  class="round-corner" />
+				<img id="me2d" src="pics/weizmann.jpg" style="width:110px;position:absolute;margin-left:10px; " alt="Yes, this is I!"  class="round-corner" />
 				<img id="me3d" style="width:130px;opacity:0;position:absolute" alt="Yes, this is I (in 3D!)"   />
 				<img  src="pics/me3d.png" style="width:130px;visibility:hidden"  />
 			</div>	
 		</div>
-		<div >
-			<div class="heading">Noam Aigerman <span style="font-size: 40%">   Pronounced "Noh-uhm", like Noah with an M at the end.</span><br/><span style="font-size: 80%">Research Scientist, Adobe Research</span></div>
-			<div style="font-size:98%">
-
-				<span class="emailplace">lastname@adobe.com</span>
-				<br/>
-				<br/> My research lies within the areas of geometry processing, computer graphics, deep learning, optimization, and the intersection between them.
 		
-			</div>
-		</div>
 	</div>
 	<br/>
 
@@ -167,31 +175,41 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 
 	</div>
 	<div class="vline" > </div>
-	<hr class="fancy-line"/>
+	<!-- <hr class="fancy-line"/> -->
 
 		<div id="pub">
-			<span class="heading">Publications</span>
+			<div class="fancy-border">
+			<span class="heading">Publications</span>&nbsp
 			<span style="color:rgb(100,150,180)">(hover over a project's image for a one-sentence summary)</span>
-			<ol style="padding:0px;list-style-type:none">
+			</div>
+			<br/>
+			<div class="paper-grid">
+			<!-- <ol style="padding:0px;list-style-type:none"> -->
 				<!-- <li class="paperyear" year="2022">
 					<ol> -->
 						
 					{% for item in site.data.papers %}
-					    <li class="paper-entry">
+					    <!-- <li class="paper-entry"> -->
 
 							<img alt="{{ item.img_alt | escape }}" class="teaser" src="{{ item.img }}"  title="{{ item.explanation | escape }}"/>
 
 							<div class="paper-cell">
-								<b>{{ item.title }}</b><br/>
+								<div class="paper-title">{{ item.title }}</div>
 								
 
 								<div class="paper-data">
 									<span class="authors">
-										{{ item.authors | replace: "Noam Aigerman", '<span class="hi">Noam Aigerman</span>' }}
+										<!-- {{ item.authors | replace: "Noam Aigerman", '<span class="hi">Noam Aigerman</span>' }} -->
+										{% assign authors = item.authors | split: ", " %}
+										{% for author in authors %}
+										<span style="white-space: nowrap;">
+											{{author}}{% if forloop.last == false %},{% endif %}
+										</span>
+										{% endfor %}
 									</span>
 									
-								{{ item.venue }}
-								<br/> 
+								<div class = "venue">{{ item.venue }}</div>
+								
 								{% if item.links %}
 							 
 							    	{% for link in item.links %}
@@ -206,12 +224,13 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 								
 								</div>
 							</div>
-							<div style="clear:left;"></div>
-						</li>
+							<!-- <div style="clear:left;"></div> -->
+						<!-- </li> -->
 				  	{% endfor %}
 					<!-- </ol>
 				</li> -->
-			</ol>
+			<!-- </ol> -->
+		</div>
 			<hr class="fancy-line"/>
 
 			<div class="heading">Others</div>
