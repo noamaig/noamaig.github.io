@@ -1,7 +1,7 @@
 ---
 ---
 <!DOCTYPE html>
-<html>
+<html style="font-size:100%">
 <head>
 	<title>Noam Aigerman's Homepage</title>
 	<script type="text/javascript" src="html/jquery/jquery.min.js"></script>
@@ -126,10 +126,7 @@ function setYears(){
 
 
 
-// setVline();
-// $('.vline').hide();
-// $('.vline').slideDown(1200);
-//setYears();
+
 
 
 $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
@@ -170,93 +167,62 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 	</div>
 	<br/>
 
-	<div style="clear:both">
+	 <div style="clear:both">
 
 
 	</div>
-	<div class="vline" > </div>
-	<!-- <hr class="fancy-line"/> -->
 
+		<br><br>
 		<div id="pub">
 			<div class="fancy-border">
 			<span class="heading">Publications</span>&nbsp
 			<span style="color:rgb(100,150,180)">(hover over a project's image for a one-sentence summary)</span>
 			</div>
 			<br/>
-			<div class="paper-grid">
-			<!-- <ol style="padding:0px;list-style-type:none"> -->
-				<!-- <li class="paperyear" year="2022">
-					<ol> -->
-						
-					{% for item in site.data.papers %}
-					    <!-- <li class="paper-entry"> -->
-
-							<img alt="{{ item.img_alt | escape }}" class="teaser" src="{{ item.img }}"  title="{{ item.explanation | escape }}"/>
-
-							<div class="paper-cell">
-								<div class="paper-title">{{ item.title }}</div>
-								
-
-								<div class="paper-data">
-									<span class="authors">
-										<!-- {{ item.authors | replace: "Noam Aigerman", '<span class="hi">Noam Aigerman</span>' }} -->
-										{% assign authors = item.authors | split: ", " %}
-										{% for author in authors %}
-										<span style="white-space: nowrap;">
-											{{author}}{% if forloop.last == false %},{% endif %}
-										</span>
-										{% endfor %}
-									</span>
-									
-								<div class = "venue">{{ item.venue }}</div>
-								
-								{% if item.links %}
-							 
-							    	{% for link in item.links %}
-									<a  href="{{ link[1] }}">{{ link[0] }}</a> {% unless forloop.last %} | {% endunless %}	
-									{% endfor %}
-							    
-							    {% else %}
-							    [Coming soon...]
-							    
-								{% endif %}
-
-								
-								</div>
-							</div>
-							<!-- <div style="clear:left;"></div> -->
-						<!-- </li> -->
-				  	{% endfor %}
-					<!-- </ol>
-				</li> -->
-			<!-- </ol> -->
-		</div>
-			<hr class="fancy-line"/>
-
-			<div class="heading">Others</div>
-			<ol>	
-				<li class="paper-entry">
-
-					<img alt="A deformation of a bar." class="teaser" src="html/projects/IGS2016/teaser.jpg"  title="A course on practical aspects of map-computation."/>
-
-					<div class="paper-cell">
-						<b>Computational Aspects of Mappings</b><br/>
-						<div class="paper-data">
-							Tutorial given at the IGS 2016 summer school (with Shahar Kovalsky)
-							<br/>  <a class="paper-link" data-size="15" href="html/projects/IGS2016/slide.pdf">Slides (pdf)</a> 
-						</div>
-
+			<div class="paper-grid">				
+				{% for item in site.data.papers %}
+				<img alt="{{ item.img_alt | escape }}" class="teaser" src="{{ item.img }}"  title="{{ item.explanation | escape }}"/>
+				<div class="paper-cell">
+					<div class="paper-title">{{ item.title }}</div>
+					<div class="paper-data">
+						<div class="authors">
+							{% assign authors = item.authors | split: ", " %}
+							{% for author in authors %}
+							<span style="white-space: nowrap;" {% if author == "Noam Aigerman" %}class="hi"{% endif %}>
+								{{author}}{% if forloop.last == false %},{% endif %}
+							</span>
+							{% endfor %}
+						</div>		
+					<div class = "venue">
+						{{ item.venue }}
+					</div>	
+					{% if item.links %}
+			 		<div class="paper-links">
+				    	{% for link in item.links %}
+						<a  href="{{ link[1] }}">{{ link[0] }}</a> {% unless forloop.last %} | {% endunless %}	
+						{% endfor %}
 					</div>
-					<div style="clear:left;"></div>
-				</li>
-			</ol>
-	<!-- 	</li>
-	</ol> -->
+				    {% else %}
+				    [Coming soon...]
+					{% endif %}	
+					</div>
+				</div>
+		  		{% endfor %}
+				<div class="fancy-border" style="grid-column: 1 / 3;">
+					<span class="heading">Others</span>
+				</div>
+				<img alt="A deformation of a bar." class="teaser" src="html/projects/IGS2016/teaser.jpg"  title="A course on practical aspects of map-computation."/>
+				<div class="paper-cell">
+					<div class="paper-title">Computational Aspects of Mappings</div>
+					<div class="paper-data">
+						Tutorial given at the IGS 2016 summer school (with Shahar Kovalsky)
+						<br/>  <a class="paper-link" data-size="15" href="html/projects/IGS2016/slide.pdf">Slides (pdf)</a> 
+					</div>
+				</div>
+			</div>
+		<a href="https://pbs.twimg.com/media/EoZdmz4XIAIYx16?format=jpg&name=large" target="_blank">Research, in a nutshell</a>
+	</div>
 </div>
-<a href="https://pbs.twimg.com/media/EoZdmz4XIAIYx16?format=jpg&name=large" target="_blank">Research, in a nutshell</a>
-</div>
-</div>
-
 </body>
 </html>
 
