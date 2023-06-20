@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html style="font-size:100%">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<title>Noam Aigerman's Homepage</title>
 	<script type="text/javascript" src="html/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="html/jquery/jquery-ui.min.js"></script>
@@ -145,7 +146,8 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 			
 			</div>
 			<div style="font-size:98%">
-				<span style="font-weight: bold;">Research Scientist, Adobe Research</span>
+				<br><br>
+				<span style="font-weight: bold;">Research Scientist <br> Adobe Research</span>
 
 				
 				<br/>
@@ -175,7 +177,8 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 		<br><br>
 		<div id="pub">
 			<div class="fancy-border">
-			<span class="heading">Publications</span>&nbsp
+			<span class="heading">Publications</span>
+			&nbsp
 			<span style="color:rgb(100,150,180)">(hover over a project's image for a one-sentence summary)</span>
 			</div>
 			<br/>
@@ -183,28 +186,30 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 				{% for item in site.data.papers %}
 				<img alt="{{ item.img_alt | escape }}" class="teaser" src="{{ item.img }}"  title="{{ item.explanation | escape }}"/>
 				<div class="paper-cell">
-					<div class="paper-title">{{ item.title }}</div>
+					<div class="paper-title">
+						{{ item.title }}
+					</div>
 					<div class="paper-data">
 						<div class="authors">
-							{% assign authors = item.authors | split: ", " %}
+							{% assign authors = item.authors | normalize_whitespace | split: ", " %}
 							{% for author in authors %}
-							<span style="white-space: nowrap;" {% if author == "Noam Aigerman" %}class="hi"{% endif %}>
+							<span style="white-space: nowrap;"{% if author == "Noam Aigerman" %} class="hi"{% endif %}>
 								{{author}}{% if forloop.last == false %},{% endif %}
 							</span>
 							{% endfor %}
 						</div>		
-					<div class = "venue">
-						{{ item.venue }}
-					</div>	
-					{% if item.links %}
-			 		<div class="paper-links">
-				    	{% for link in item.links %}
-						<a  href="{{ link[1] }}">{{ link[0] }}</a> {% unless forloop.last %} | {% endunless %}	
-						{% endfor %}
-					</div>
-				    {% else %}
-				    [Coming soon...]
-					{% endif %}	
+						<div class = "venue">
+							{{ item.venue }}
+						</div>	
+						{% if item.links %}
+				 		<div class="paper-links">
+					    	{% for link in item.links %}
+							<a href="{{ link[1] }}">{{ link[0] }}</a> {% unless forloop.last %} | {% endunless %}	
+							{% endfor %}
+						</div>
+					    {% else %}
+					    [Coming soon...]
+						{% endif %}	
 					</div>
 				</div>
 		  		{% endfor %}

@@ -180,7 +180,7 @@ hr.fancy-line{
     display: block;
         color: rgb(80,80,80);
         padding-bottom: 3px;
-    font-size: 0.9em;
+    font-size: 14px;
 }
 .hi{
 /*  font-size: 14px;*/
@@ -215,8 +215,8 @@ a:hover{
   margin-bottom: 0em;
   border-image: linear-gradient(to right,darkblue ,lightsteelblue 32px, white 80%) 1;
 /*  linear-gradient(to right,lightsteelblue, white) 1;*/
-    padding-left: 4px;
-  margin-left: -4px;
+    padding-left: 6px;
+  margin-left: -14px;
 }
 
 .paper-size-tooltip{
