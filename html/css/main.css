@@ -20,6 +20,7 @@ background: -ms-linear-gradient(45deg,  rgb(245,245,249) 0%,rgb(245,245,245) 100
 background: linear-gradient(45deg,  rgb(245,245,249) 0%,rgb(245,245,245) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(245,245,249)', endColorstr='rgb(245,245,245)',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
+
 }
 
 .paper-entry{
@@ -47,6 +48,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(245,245,2
 .round-corner,#main,.paper-entry{
   -moz-border-radius: 15px;
   border-radius: 15px;
+}
+.emailplace{
+  font-size: 0.9em;
 }
 .tab{
   border-radius: 0px 0px 10px 0px;
@@ -125,20 +129,36 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(245,245,2
   tr{
     border: 2px solid blue;
   }
+
 #main_container{
-    margin-left: 2%;
-    margin-right: 2%;
+  background-color: rgb(252,250,250);
+    /*margin-left: 2%;
+    margin-right: 2%;*/
+    /*background-size: 20px 20px;
+  background-image:
+    linear-gradient(to right, rgb(240,240,255) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(240,240,255) 1px, transparent 1px);*/
+  /*background:
+    linear-gradient(120deg, transparent 75%, rgb(240,240,240) 75%) 0px 0,
+    linear-gradient(240deg, transparent 75%, rgb(240,240,240) 75%) 0 0,
+    linear-gradient(120deg, transparent 75%, rgb(245,245,245) 75%) 12px -20.75px,
+    linear-gradient(240deg, transparent 75%, rgb(245,245,245) 75%) 12px -20.75px,
+    white;
+  background-size: 24px 41.5px;*/
+
 }
+
+
 #main{
 
-background: rgb(254,252,253); /* Old browsers */
-background: -moz-linear-gradient(90deg,  rgb(254,252,253) 99%, rgb(245,245,245) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left , right , color-stop(99%,rgb(254,252,253)), color-stop(100%,rgb(245,245,245))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(90deg,  rgb(254,252,253) 99%,rgb(245,245,245) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(90deg,  rgb(254,252,253) 99%,rgb(245,245,245) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(90deg,  rgb(254,252,253) 99%,rgb(245,245,245) 100%); /* IE10+ */
-background: linear-gradient(90deg,  rgb(254,252,253) 99%,rgb(245,245,245) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(254,252,253)', endColorstr='rgb(245,245,245)',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+background: rgb(254,252,253); 
+background: -moz-linear-gradient(90deg,  rgb(254,252,253) 99%, rgb(245,245,245) 100%);
+background: -webkit-gradient(linear, left , right , color-stop(99%,rgb(254,252,253)), color-stop(100%,rgb(245,245,245))); 
+background: -webkit-linear-gradient(90deg,  rgb(254,252,253) 99%,rgb(245,245,245) 100%); 
+background: -o-linear-gradient(90deg,  rgb(254,252,253) 99%,rgb(245,245,245) 100%); 
+background: -ms-linear-gradient(90deg,  rgb(254,252,253) 99%,rgb(245,245,245) 100%); 
+background: linear-gradient(90deg,  rgb(254,252,253) 99%,rgb(245,245,245) 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(254,252,253)', endColorstr='rgb(245,245,245)',GradientType=1 ); 
 padding-left:40px;
 padding-right:40px;
 padding-top:30px;
@@ -146,6 +166,8 @@ font-size:15px;
 font-family: 'Open Sans', sans-serif;
 max-width: 900px;
 margin: 0 auto;
+
+  
 }
 
 
@@ -203,12 +225,25 @@ a:hover{
 .paper-title{
   font-weight: bold;
 }
+.pronounce-tip{
+  font-size: 0.6em;
+  white-space: nowrap;
+  transition: font-size 0.5s ease-out 100ms;
+}
+.pronounce-tip:hover{
+  font-size: 1em;
+}
+:root {
+  --heading-color: rgb(0,0,70);
+}
 .heading{
 	font-size:1.5em;
 	font-weight:bold;
-	color:rgb(0,10,30);
+	color:var(--heading-color); ;
 /*	margin-bottom:10px;*/
 }
+
+
 .fancy-border{
   border-bottom:solid;
   border-bottom-width: 1px;
@@ -216,7 +251,15 @@ a:hover{
   border-image: linear-gradient(to right,darkblue ,lightsteelblue 32px, white 80%) 1;
 /*  linear-gradient(to right,lightsteelblue, white) 1;*/
     padding-left: 6px;
-  margin-left: -14px;
+  margin-left: -10px;
+}
+.icon{
+  width: 16px;
+  padding-right: 1px;
+  fill: var(--heading-color);
+}
+.icon:hover{
+  opacity: 70%;
 }
 
 .paper-size-tooltip{
