@@ -302,7 +302,7 @@ Mathieu Salzmann, Pascal Fua, Noam Aigerman"
   explanation: "Characterization of convex sets of matrices possessing bounded Singular Values, enabling optimization via Semidefinite Programming."
   authors: "Shahar Kovalsky, Noam Aigerman, Ronen Basri, Yaron Lipman"
   title: "Controlling Singular Values with Semidefinite Programming"
-  venue: "ACM SIGGRAPH 2013"
+  venue: "ACM SIGGRAPH 2014"
   links:
    "Paper": "html/projects/cont/cont_sing.pdf"
    "Low Res": "html/projects/cont/cont_sing_lowres.pdf"
