@@ -138,6 +138,18 @@ min-width: 180px;
   .heading.title{
     font-size: 37px;
   }
+#address{
+  font-size: 70%;
+}
+#affiliations{
+  color:var(--heading-color);
+  font-weight: bold;
+}
+#about{
+  font-size:90%;
+  max-width: 90%;
+  color:rgb(40,100,160)
+}
 @media (max-width: 767px) {
   /* Media query for screens with a maximum width of 767px (e.g., smartphones) */
 

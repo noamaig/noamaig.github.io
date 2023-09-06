@@ -1,6 +1,5 @@
 function setMail() {
-    a1 = "sssssasssisssgsessrsssssmsssasns@sassdssssosssbses.com";
+    a1 = "mailto:sssssnssssosssssassssmssssss.sssassssisssssssgsssssesssrssmssssssassnsssssss@ssssussmssssossnssstssssrsssesssssasls.scssssassss";
     address = a1.replace(/s/g,"");
-    e = "<a href=\"mailto:" + address + "\" target=\"_blank\" >" + address + "</a> ";
-    $(".emailplace").html(e);
+    $("#email-link").attr("href", address)
 }

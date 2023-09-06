@@ -146,12 +146,24 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 		<div style="grid-column: 1;">
 			
 			
-			<div class style="padding-top: 5px;padding-left:5px;font-weight: bold;">
+			<div class style="padding-top: 25px;">
 				<div style="font-size: 1.05em;" class="subheading">
-					<span style>Research Scientist,</span> <span style="font-style:italic;">Adobe Research</span>
+					<div id = "affiliations">
+						Assistant Professor, <a target="_blank"  href="https://www.umontreal.ca/">University of Montreal</a><br>
+						Associate Academic Member, <a target="_blank" href="https://mila.quebec/en/">Mila</a>
+					</div>
+					<br>
+					<div id="address">
+						Pavillon André-Aisenstadt
+						<br>Room 3359
+						<br>C.P. 6128, succ. Centre-Ville
+						<br>Montréal, Québec
+						<br>Canada H3C 3J7
+					</div>
 				</div>
+				<br>
 				<div style="padding-top:6px;padding-left: 1px;">
-					<a href="mailto:aigerman@adobe.com">
+					<a id="email-link" href="mailto:firstname.lastname@umontreal.ca">
 						<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"  stroke="currentColor"  stroke-linecap="round" stroke-linejoin="round">
 							<title>Email</title>
   							<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -171,23 +183,21 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 				</div> 
 			</div>
 			<br>
-			<br>
-			<div style="font-size:98%;max-width: 90%;color:rgb(40,100,160)">
-				I am a computer scientist working on problems related to 3D and 2D geometry. My research lies at the intersection of <span style="font-style: italic;">geometry processing</span>, <span style="font-style: italic;">computer graphics</span>, <span style="font-style: italic;">deep learning</span>, and <span style="font-style: italic;">optimization</span>.<br>Currently, I mostly focus on using geometry processing to devise thoeretically-grounded machine learning approaches for 3D problems; and, vice-versa, approaching geometry processing tasks from a machine learning perspective. 
+			<div id="about">
+				I am a computer scientist working on problems related to machine learning and 3D geometry. My research lies at the intersection of <span style="font-style: italic;">geometry processing</span>, <span style="font-style: italic;">computer graphics</span>, <span style="font-style: italic;">deep learning</span>, and <span style="font-style: italic;">optimization</span>. Currently, I mostly focus on using geometry processing to devise thoeretically-grounded machine learning approaches for 3D problems; and, vice-versa, approaching geometry processing tasks from a machine learning perspective. 
 			</div>
+			
 		</div>
-		<div style="margin-right:1%;grid-column: 2;">
+		<div style="margin-right:1%;grid-column: 2;justify-self: end;">
 			<div id="mepic">
-				<img id="me2d" src="pics/weizmann.jpg" style="width:110px;margin-left:10px; " alt="Yes, this is I!"  class="round-corner" />
-				<!-- 
-				<img id="me3d" style="width:130px;opacity:0;position:absolute" alt="Yes, this is I (in 3D!)"   />
-				<img  src="pics/me3d.png" style="width:130px;visibility:hidden"  /> -->
+				<img id="me2d" src="pics/me.jpg" style="width:220px;margin-left:10px;" alt="Yes, this is I!"  class="round-corner" />
+				
 			</div>	
 		</div>
 	</div>
 	
 	<br/>
-
+	
 	 <div style="clear:both">
 
 
