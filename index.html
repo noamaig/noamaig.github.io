@@ -135,21 +135,21 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 " >
 <div id = "main_container">
 <div id="main" >
-	<div class = "fancy-border">
-				<div style="margin-bottom: -8px;">
-					<span class="heading title">Noam Aigerman </span>
-					<span class="pronounce-tip">   (pronounced "Noh-uhm", like Noah with an M at the end.)</span>
-				</div>
-
-			</div>
-	<div style="display: grid;">
-		<div style="grid-column: 1;">
+	<!-- <div class = "fancy-border"> -->
+		<div style="display: grid;">
+			<div style="grid-column: 1;">
+		<div> 
+			<span class="heading title fancy-border">Noam Aigerman </span>
+			<span class="pronounce-tip">   (pronounced "Noh-uhm", like Noah with an M at the end.)</span>
+		</div>
+	<!-- </div> -->
+	
 			
 			
-			<div class style="padding-top: 25px;">
+			<div  >
 				<div style="font-size: 1.05em;" class="subheading">
-					<div id = "affiliations">
-						<span style="white-space: nowrap;">Assistant Professor,</span> <span style="white-space: nowrap;"><a target="_blank"  href="https://www.umontreal.ca/">University of Montreal</a></span><br>
+					<div id = "affiliations" style="padding-top: 25px;font-weight: normal;">
+						<span style="white-space: nowrap;">Assistant Professor,</span> <span style="white-space: nowrap;"><a target="_blank"  href="https://www.umontreal.ca/en/">University of Montreal</a></span><br>
 						<span style="white-space: nowrap;">Associate Academic Member,</span> <span style="white-space: nowrap;"><a target="_blank" href="https://mila.quebec/en/">Mila</a></span>
 					</div>
 					
@@ -160,7 +160,7 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 								  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
 								  <polyline points="22,6 12,13 2,6"/>
 							</svg></a>
-						<a href="https://scholar.google.com/citations?user=eO2xkdMAAAAJ&hl=en" target="_blank">
+						<a href="https://scholar.google.com/citations?user=eO2xkdMAAAAJ&hl=en" target="_blank" >
 							<svg class="icon" role="img" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
 								<title>Google Scholar</title>
 								<path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
@@ -169,13 +169,12 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 							<svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<title>Twitter</title>
 								<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-							</svg>
-						</a>
+							</svg></a>
 					</div> 
 					<br>
 					<div id="address">
-						Pavillon André-Aisenstadt
-						<br>Room 3359
+						Room 3359
+						<br>Pavillon André-Aisenstadt
 						<br>C.P. 6128, succ. Centre-Ville
 						<br>Montréal, Québec
 						<br>Canada H3C 3J7
@@ -190,9 +189,9 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 			</div>
 			
 		</div>
-		<div style="margin-right:1%;grid-column: 2;justify-self: end;">
+		<div style="margin-right:1%;grid-column: 2;justify-self: end;max-width:220px; min-width: 150px;padding-left: 20px;">
 			<div id="mepic">
-				<img id="me2d" src="pics/me.jpg" style="width:220px;margin-left:10px;" alt="Yes, this is I!"  class="round-corner" />
+				<img id="me2d" src="pics/me.jpg" style="max-width: 100%;margin-left:10px;" alt="Yes, this is I!"  class="round-corner" />
 				
 			</div>	
 		</div>

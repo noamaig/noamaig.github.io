@@ -142,7 +142,8 @@ min-width: 180px;
   font-size: 70%;
 }
 #affiliations{
-  color:var(--heading-color);
+  /* color:var(--heading-color); */
+  color:rgb(20,00,40);
   font-weight: bold;
 }
 #about{
@@ -263,10 +264,12 @@ hr.fancy-line{
 }
 a{
   color:rgb(00,100,180);
-  font-weight:bold
 }
 a:hover{
   color:rgb(70,100,140);
+}
+.paper-links{
+  font-weight:bold
 }
 .paper-title{
   font-weight: bold;
