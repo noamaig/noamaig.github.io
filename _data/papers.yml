@@ -24,7 +24,8 @@
   title: "Neural Progressive Meshes"
   authors: "Yun-Chun Chen, Vladimir G. Kim, Noam Aigerman, Alec Jacobson"
   venue: "ACM SIGGRAPH 2023"
-
+  links:
+    Paper: "https://arxiv.org/abs/2308.05741"
 
 - img: "html/DAWand.jpg"
   img_alt: "A point is selected on the mesh by a user, and a region containing this point is selected by our network, such that the region can UV-mapped with low-distortion (UV map visualized with a square texture on the selected region)."
