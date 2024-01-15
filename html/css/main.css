@@ -143,8 +143,16 @@ min-width: 180px;
 }
 #affiliations{
   /* color:var(--heading-color); */
-  color:rgb(20,00,40);
+ /* color:rgb(40,80,150);  */
   font-weight: bold;
+  font-size: 1.03em;
+  padding-left: 5pt;
+}
+#affiliations a {
+  font-weight: normal;
+  font-style: italic;
+  color: var(--subheading-color);
+  text-decoration: none;
 }
 #about{
   font-size:90%;
@@ -171,6 +179,9 @@ min-width: 180px;
   }
   .heading.title{
     font-size: 25px;
+  }
+  #hoverhint{
+    display: none;
   }
 }
 .cen{

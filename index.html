@@ -135,20 +135,30 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 " >
 <div id = "main_container">
 <div id="main" >
-	<!-- <div class = "fancy-border"> -->
-		<div style="display: grid;">
-			<div style="grid-column: 1;">
-		<div> 
-			<span class="heading title fancy-border">Noam Aigerman </span>
-			<span class="pronounce-tip">   (pronounced "Noh-uhm", like Noah with an M at the end.)</span>
-		</div>
-	<!-- </div> -->
-	
-			
-			
-			<div  >
-				<div style="font-size: 1.05em;" class="subheading">
-					<div id = "affiliations" style="padding-top: 25px;font-weight: normal;">
+	<div style="display: grid;">
+		<div style="grid-column: 1;">
+			<!-- <div style="display: grid;grid-template-columns: min-content min-content;"> 
+
+				<div class="fancy-border" style="float: left;grid-column: 1;">
+					<div class="heading title" style="margin-bottom: -8px;white-space: nowrap;">
+						Noam Aigerman 
+					</div>
+				</div>
+				<div style="grid-column: 2;display: flex; align-items: end;">
+					<span class="pronounce-tip">   (pronounced "Noh-uhm", like Noah with an M at the end.)</span>
+				</div>
+			</div>	 -->
+			<div class="fancy-border">
+				<div style="margin-bottom: -8px;">
+					<span class="heading title">Noam Aigerman </span>
+					<span class="pronounce-tip">   (pronounced "Noh-uhm", like Noah with an M at the end.)</span>
+				</div>
+
+			</div>
+		
+			<div>
+				<div style="padding-top: 12px; clear: both;" class="subheading">
+					<div id = "affiliations">
 						<span style="white-space: nowrap;">Assistant Professor,</span> <span style="white-space: nowrap;"><a target="_blank"  href="https://www.umontreal.ca/en/">University of Montreal</a></span><br>
 						<span style="white-space: nowrap;">Associate Academic Member,</span> <span style="white-space: nowrap;"><a target="_blank" href="https://mila.quebec/en/">Mila</a></span>
 					</div>
@@ -189,7 +199,10 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 									<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
 								</svg></a>
 						</div>
-						
+						<div>
+							<a href = "https://outlook.office365.com/calendar/published/bfb42cda911e483c804e1aa24b7005d5@umontreal.ca/9effdc18dae74e6d9048daaeaf1440db12973665910407921392/calendar.html" target="_blank">Calendar</a>
+						</div>
+						<!-- <iframe src= "https://outlook.office365.com/calendar/published/bfb42cda911e483c804e1aa24b7005d5@umontreal.ca/9effdc18dae74e6d9048daaeaf1440db12973665910407921392/calendar.html" style="border: 0;-webkit-transform:scale(0.7);-moz-transform-scale(0.7);" width="800" height="600" frameborder="0" scrolling="no"></iframe> -->
 					</div> 
 				</div>
 				<br>
@@ -199,7 +212,6 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 			<div id="about">
 				<span style="text-decoration: underline;">Blurb:</span> I am a computer scientist working on problems related to machine learning and 3D geometry. My research lies at the intersection of <span style="font-style: italic;">geometry processing</span>, <span style="font-style: italic;">computer graphics</span>, <span style="font-style: italic;">deep learning</span>, and <span style="font-style: italic;">optimization</span>. Currently, I mostly focus on using geometry processing to devise thoeretically-grounded machine learning approaches for 3D problems; and, vice-versa, approaching geometry processing tasks from a machine learning perspective. 
 			</div>
-			
 		</div>
 		<div style="margin-right:1%;grid-column: 2;justify-self: end;max-width:220px; min-width: 150px;padding-left: 20px;">
 			<div id="mepic">
@@ -210,7 +222,16 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 	</div>
 	
 	<br/>
-	
+	<div id="pub" style="padding-top:20px">
+		<div class="fancy-border">
+		<span class="heading">Teaching</span>
+		</div>
+		<br/>
+		
+	</div>
+	<div>
+		Winter 2024: <a href="course_NGP.html">IFT6095 - Neural Geometry Processing</a>
+	</div>
 	 <div style="clear:both">
 
 
@@ -221,7 +242,7 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 			<div class="fancy-border">
 			<span class="heading">Publications</span>
 			&nbsp
-			<span class="subheading" style="white-space: nowrap;"> (hover over a project's image for a one-sentence summary)</span>
+			<span id="hoverhint" class="subheading" style="white-space: nowrap;"> (hover over a project's image for a one-sentence summary)</span>
 			</div>
 			<br/>
 			<div class="paper-grid" style="padding-top:5px">				
