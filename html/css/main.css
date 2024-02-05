@@ -140,6 +140,8 @@ min-width: 180px;
   grid-column: 1;
 
 }
+
+
 .teaser:hover{
 
   background:-webkit-radial-gradient(rgb(202,201,200),rgb(246,245,244),rgb(255,255,255));
@@ -150,16 +152,14 @@ min-width: 180px;
   .heading.title{
     font-size: 37px;
   }
-#address{
-  font-size: 70%;
-}
+
 #affiliations{
   /* color:var(--heading-color); */
  /* color:rgb(40,80,150);  */
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
   padding-left: 5pt;
-  color: rgb(0,0,100);
+  color: rgb(40,80,150);
 }
 #affiliations a {
   font-weight: normal;
@@ -174,7 +174,7 @@ min-width: 180px;
 }
 @media (max-width: 767px) {
   #affiliations{
-    font-size: 12px;
+    /* font-size: 12px; */
     text-align: center;
   }
   /* Media query for screens with a maximum width of 767px (e.g., smartphones) */
