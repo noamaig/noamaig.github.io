@@ -1,3 +1,11 @@
+- img: "html/deformation_explore.PNG"
+  img_alt: "Top: point clouds are generated through a pretrained generative model, and are used to deform and swap meshes (bottom)."
+  explanation: "Using an existing generative model for point clouds to generat and control deformations of meshes."
+  title: "Explorable Mesh Deformation Subspaces from Unstructured 3D Generative Models"
+  authors: "Arman Maesumi, Paul Guerrero, Vladimir G. Kim, Matthew Fisher, Siddhartha Chaudhuri, Noam Aigerman, Daniel Ritchie"
+  venue: "ACM SIGGRAPH Asia 2023"
+  links:
+    "Project page": "https://armanmaesumi.github.io/explorable_subspaces/"
 - img: "html/textdeformer.jpg"
   img_alt: "The cow is deformed into two desired shapes described by a text prompt, in this case a turtle and a stag."
   explanation: "Deforming 3D meshes based on text prompts, by rendering the mesh from various view angles and using a trained visual encoder (CLIP), with a tailor-made deformation module which can consolidate the different viewpoints in a meaningful way."
