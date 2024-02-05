@@ -136,7 +136,7 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 <div id = "main_container">
 <div id="main" >
 	<div style="display: grid;">
-		<div style="grid-column: 1;">
+		<div id="infobox">
 			<!-- <div style="display: grid;grid-template-columns: min-content min-content;"> 
 
 				<div class="fancy-border" style="float: left;grid-column: 1;">
@@ -148,13 +148,13 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 					<span class="pronounce-tip">   (pronounced "Noh-uhm", like Noah with an M at the end.)</span>
 				</div>
 			</div>	 -->
-			<div class="fancy-border">
-				<div style="margin-bottom: -8px;">
-					<span class="heading title">Noam Aigerman </span>
+			<!-- <div class="fancy-border"> -->
+				<div id="name">
+					<span class="heading title fancy-border">Noam Aigerman </span>
 					<span class="pronounce-tip">   (pronounced "Noh-uhm", like Noah with an M at the end.)</span>
 				</div>
 
-			</div>
+			<!-- </div> -->
 		
 			<div>
 				<div style="padding-top: 12px; clear: both;" class="subheading">
@@ -210,12 +210,12 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 			</div>
 			<br>
 			<div id="about">
-				<span style="text-decoration: underline;">Blurb:</span> I am a computer scientist working on problems related to machine learning and 3D geometry. My research lies at the intersection of <span style="font-style: italic;">geometry processing</span>, <span style="font-style: italic;">computer graphics</span>, <span style="font-style: italic;">deep learning</span>, and <span style="font-style: italic;">optimization</span>. Currently, I mostly focus on using geometry processing to devise thoeretically-grounded machine learning approaches for 3D problems; and, vice-versa, approaching geometry processing tasks from a machine learning perspective. 
+				<span style="text-decoration: underline;"></span> I am a computer scientist working on problems related to machine learning and 3D geometry. My research lies at the intersection of <span style="font-style: italic;">geometry processing</span>, <span style="font-style: italic;">computer graphics</span>, <span style="font-style: italic;">deep learning</span>, and <span style="font-style: italic;">optimization</span>. Currently, I mostly focus on using geometry processing to devise thoeretically-grounded machine learning approaches for 3D problems; and, vice-versa, approaching geometry processing tasks from a machine learning perspective. 
 			</div>
 		</div>
-		<div style="margin-right:1%;grid-column: 2;justify-self: end;max-width:220px; min-width: 150px;padding-left: 20px;">
+		<div id="mebox">
 			<div id="mepic">
-				<img id="me2d" src="pics/me.jpg" style="max-width: 100%;margin-left:10px;" alt="Yes, this is I!"  class="round-corner" />
+				<img id="me2d" src="pics/me.jpg" alt="Yes, this is I!"  class="round-corner" />
 				
 			</div>	
 		</div>
@@ -230,7 +230,7 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 		
 	</div>
 	<div>
-		Winter 2024: <a href="course_NGP.html">IFT6095 - Neural Geometry Processing</a>
+		Winter 2024: <a href="course_NGP.html" target ="_blank">IFT6095 - Neural Geometry Processing</a>
 	</div>
 	 <div style="clear:both">
 

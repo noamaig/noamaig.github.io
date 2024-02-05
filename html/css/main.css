@@ -1,7 +1,11 @@
 ol{
   list-style-type:none;
   padding: 0px;
-}x
+}
+#name{
+  /* margin-bottom: -8px; */
+  
+}
 body{
   /*font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   -webkit-text-size-adjust: 100% ;*/
@@ -39,9 +43,11 @@ font-size:15px;
 font-family: 'Open Sans', sans-serif;
 max-width: 900px;
 margin: 0 auto;
-
-  
 }
+#me2d{
+  max-width: 100%;margin-left:10px;
+}
+
 .paper-entry{
   /*display:inline-block;*/
   padding-bottom:20px;
@@ -63,6 +69,12 @@ margin: 0 auto;
   padding-bottom:5px;
   background-color:rgb(255,255,170);
 
+}
+#infobox{
+  grid-column: 1;
+}
+#mebox{
+  margin-right:1%;grid-column: 2;justify-self: end;max-width:220px; min-width: 150px;padding-left: 20px;
 }
 .round-corner,#main,.paper-entry{
   -moz-border-radius: 15px;
@@ -145,8 +157,9 @@ min-width: 180px;
   /* color:var(--heading-color); */
  /* color:rgb(40,80,150);  */
   font-weight: bold;
-  font-size: 1.03em;
+  font-size: 14px;
   padding-left: 5pt;
+  color: rgb(0,0,100);
 }
 #affiliations a {
   font-weight: normal;
@@ -160,8 +173,34 @@ min-width: 180px;
   color:rgb(40,100,160)
 }
 @media (max-width: 767px) {
+  #affiliations{
+    font-size: 12px;
+    text-align: center;
+  }
   /* Media query for screens with a maximum width of 767px (e.g., smartphones) */
-
+  #about{
+    max-width: 100%;
+  }
+  #name{
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #me2d{
+    margin-left: 0px;
+  }
+  #infobox{
+    grid-row: 2;
+    grid-column: auto;
+    justify-self: center;
+  }
+  #mebox{
+    grid-row: 1;
+    grid-column: auto;
+    /* margin-right:1%;grid-column: 2;justify-self: end;max-width:220px; min-width: 150px;padding-left: 20px; */
+    justify-self: center;
+    max-width: 200px;
+    padding-left: 0px;
+  }
   .paper-cell{
     grid-column: 1;
     padding-bottom: 40px;
@@ -177,9 +216,9 @@ min-width: 180px;
   #main{
     margin:5px;
   }
-  .heading.title{
+  /* .heading.title{
     font-size: 25px;
-  }
+  } */
   #hoverhint{
     display: none;
   }
@@ -237,8 +276,8 @@ min-width: 180px;
   position: absolute;
   left: 18%;
   top: 205px;
-  width=100%;
-  display: : none;
+  width: 100%;
+  display:none;
 }
 hr.fancy-line{
   border:  0px;
@@ -273,6 +312,7 @@ hr.fancy-line{
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+
 a{
   color:rgb(00,100,180);
 }
@@ -288,11 +328,11 @@ a:hover{
 .pronounce-tip{
   font-size: 0.6em;
   white-space: nowrap;
-  transition: font-size 0.5s ease-out 100ms;
+  /* transition: font-size 0.5s ease-out 100ms; */
 }
-.pronounce-tip:hover{
+/* .pronounce-tip:hover{
   font-size: 1em;
-}
+} */
 :root {
   --heading-color: rgb(20,50,110);
   --subheading-color:rgb(100,140,200);
