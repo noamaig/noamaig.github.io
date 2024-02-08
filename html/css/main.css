@@ -141,7 +141,18 @@ min-width: 180px;
 
 }
 
-
+#linksbox{
+  font-size: 70%; 
+  padding-top:36px;
+  padding-left: 12px;
+  display: grid;  
+  align-items: center;
+  grid-template-columns: min-content auto;
+  row-gap: 1spx;
+}
+#linksbox  a {
+  color: rgb(100,150,200);
+}
 .teaser:hover{
 
   background:-webkit-radial-gradient(rgb(202,201,200),rgb(246,245,244),rgb(255,255,255));
@@ -157,7 +168,7 @@ min-width: 180px;
   /* color:var(--heading-color); */
  /* color:rgb(40,80,150);  */
   font-weight: bold;
-  font-size: 13px;
+  font-size: 15px;
   padding-left: 5pt;
   color: rgb(40,80,150);
 }

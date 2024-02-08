@@ -1,6 +1,6 @@
 - img: "html/deformation_explore.PNG"
   img_alt: "Top: point clouds are generated through a pretrained generative model, and are used to deform and swap meshes (bottom)."
-  explanation: "Using an existing generative model for point clouds to generat and control deformations of meshes."
+  explanation: "Using an existing generative model for point clouds to generate and control deformations of meshes."
   title: "Explorable Mesh Deformation Subspaces from Unstructured 3D Generative Models"
   authors: "Arman Maesumi, Paul Guerrero, Vladimir G. Kim, Matthew Fisher, Siddhartha Chaudhuri, Noam Aigerman, Daniel Ritchie"
   venue: "ACM SIGGRAPH Asia 2023"
