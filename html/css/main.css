@@ -226,6 +226,10 @@ min-width: 180px;
   }
   #main{
     margin:5px;
+    margin: 0px;
+  }
+  body{
+    margin: 0px;
   }
   /* .heading.title{
     font-size: 25px;
