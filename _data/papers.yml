@@ -1,3 +1,14 @@
+- img: "html/snsm.jpg"
+  img_alt: "A 1-to-1 map between two 3D models which respects semantic correspondence, computed automatically using our method. Map is visualized by placing a checker texture on the left mesh and using the map to transfer the texture to the right mesh."
+  explanation: "Modifying Neural Surface Maps to operate semantically, by rendering the models from different view points and using 2D matchings from a pretrained vision transformer."
+  title: "Neural Semantic Surface Maps"
+  authors: "Luca Morreale,  Noam Aigerman, Vladimir G. Kim,  Niloy Mitra"
+  venue: "Computer Graphics Forum (Eurographics 2024)"
+  links:
+    "Project page": "https://geometry.cs.ucl.ac.uk/group_website/projects/2024/nssm/"
+
+
+
 - img: "html/deformation_explore.PNG"
   img_alt: "Top: point clouds are generated through a pretrained generative model, and are used to deform and swap meshes (bottom)."
   explanation: "Using an existing generative model for point clouds to generate and control deformations of meshes."
