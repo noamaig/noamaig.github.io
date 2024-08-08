@@ -5,7 +5,8 @@
   title: "Generative Escher Meshes"
   venue: "ACM SIGGRAPH 2024"
   links:
-    "Paper": "https://arxiv.org/pdf/2309.14564"
+    "Paper (hi-res)": "html/escher_full.pdf"
+    "Paper (low-res)": "https://arxiv.org/pdf/2309.14564"
     "Code": "https://github.com/ThibaultGROUEIX/GenerativeEscherMeshes"
 
 - img: "html/tuttenet.jpg"
