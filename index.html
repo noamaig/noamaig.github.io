@@ -237,18 +237,32 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 			</div>
 		</div>
 		<br/>
+
+
+
 		<div id="pub" style="padding-top:20px">
 			<div class="fancy-border">
 			<span class="heading">Group</span>
 			</div>
 			<br/>
 		</div>
+		
 		<div>
-			<a href="https://tianshukuai.github.io/" target="_blank">Tianshu Kuai</a> (PhD 2024 - )<br/>
-			<a href="https://darshkaushik.github.io/" target="_blank"> Darsh Kaushik</a>  (MSc 2024 - )<br/>
-			Martin El Mqirmi (MSc 2024 -)
+		{% for student in site.data.students %}
+			{% if student.link  %}
+				<a href="{{student.link}}" target="_blank">{{student.name}}</a>
+			{% else %}
+				{{student.name}}
+			{% endif %}
+			({% for role in student.roles %}{{role.title}} {{role.start}} - {{role.end}}{% if forloop.last == false %};{% endif %}{% endfor %})
+			{% if forloop.last == false %}<br/>{% endif %}
+		{% endfor %}
 		</div>
 		<br/>
+
+
+
+
 		<div id="pub" style="padding-top:20px">
 			<div class="fancy-border">
 			<span class="heading">Teaching</span>
@@ -257,7 +271,10 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 			
 		</div>
 		<div>
-			Winter 2024: <a href="course_NGP.html" target ="_blank">IFT6095 - Neural Geometry Processing</a>
+			{% for class in site.data.classes %}
+			<a href="{{class.link}}" target ="_blank">{{class.name}}</a>  ({{class.semester | downcase}})
+			{% if forloop.last == false %}<br/>{% endif %}
+			{% endfor %}
 		</div>
 		<div style="clear:both">
 
