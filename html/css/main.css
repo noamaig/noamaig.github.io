@@ -223,6 +223,7 @@ min-width: 180px;
   }
   .paper-title{
     text-decoration: underline;
+    padding-bottom: 3px;
   }
   #main{
     margin:5px;
