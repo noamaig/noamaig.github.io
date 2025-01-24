@@ -1,3 +1,14 @@
+- img: "html/meshup.jpg"
+  img_alt: "A wolf automatically deformed to a hipo via text-guided deformation."
+  explanation: "Text-guided deformation, with ability to blend between few different targets."
+  authors: "Hyunwoo Kim, Itai Lang, Thibault Groueix, Noam Aigerman, Vladimir G. Kim, and Rana Hanocka"
+  title: "MeshUp: Multi-Target Mesh Deformation via Blended Score Distillation"
+  venue: "3DV 2025"
+  links:
+    "Paper": "https://arxiv.org/abs/2408.14899"
+    "Project Page": "https://threedle.github.io/MeshUp/"
+
+
 - img: "html/magicclay.jpg"
   img_alt: "A chosen region on the back of the armadillo is deformed to different types of wings, based on different input text prompts."
   explanation: "Enabling local text-guided edits of meshes via a hybrid mesh/SDF representation."
