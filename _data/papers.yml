@@ -1,9 +1,20 @@
+- img: "html/instant3dit.jpg"
+  img_alt: "A 3D model of a bear is kept intact while adding wings (guided by a text prompt), by masking part of the object (purple ellipsoid) and reconstructing that part."
+  explanation: "A method for localizing text-guided edits of 3D models, using masking."
+  authors: "Amir Barda, Matheus Gadelha, Vladimir G. Kim, Noam Aigerman, Amit Haim Bermano, Thibault Groueix"
+  title: "Instant3dit: Multiview Inpainting for Fast Editing of 3D Objects"
+  venue: "CVPR 2025"
+  links:
+    "Paper": "https://arxiv.org/abs/2412.00518"
+    "Project Page": "https://amirbarda.github.io/Instant3dit.github.io/"
+
+
 - img: "html/meshup.jpg"
   img_alt: "A wolf automatically deformed to a hipo via text-guided deformation."
   explanation: "Text-guided deformation, with ability to blend between few different targets."
-  authors: "Hyunwoo Kim, Itai Lang, Thibault Groueix, Noam Aigerman, Vladimir G. Kim, and Rana Hanocka"
+  authors: "Hyunwoo Kim, Itai Lang, Thibault Groueix, Noam Aigerman, Vladimir G. Kim, Rana Hanocka"
   title: "MeshUp: Multi-Target Mesh Deformation via Blended Score Distillation"
-  venue: "3DV 2025"
+  venue: "3DV 2025 (Oral)"
   links:
     "Paper": "https://arxiv.org/abs/2408.14899"
     "Project Page": "https://threedle.github.io/MeshUp/"
