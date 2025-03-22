@@ -3,6 +3,7 @@
   roles:
     - title: PhD
       start: 2024
+
 - name: Darsh Kaushik
   link: "https://darshkaushik.github.io/"
   roles:
@@ -12,3 +13,8 @@
   roles:
     - title: MSc
       start: 2024
+
+- name: Thomas Peschlow
+  roles:
+    - title: MSc
+      start: 2025
