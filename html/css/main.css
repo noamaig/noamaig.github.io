@@ -2,6 +2,25 @@ ol{
   list-style-type:none;
   padding: 0px;
 }
+.student-name{
+  grid-column: 1;
+}
+.student-role{
+  font-size: small;
+  position: relative;
+  bottom: 0px;
+  /* top: 5px; */
+  /* left: -2px; */
+  grid-column: 2;
+}
+#students-div{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min-content);
+  gap: 0px;
+  justify-items: start;
+  justify-content: start;
+  column-gap: 24px;
+}
 #name{
   /* margin-bottom: -8px; */
   

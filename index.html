@@ -253,15 +253,19 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 			<br/>
 		</div>
 		
-		<div>
+		<div id="students-div">
 		{% for student in site.data.students %}
+				<div class="student-name">
 			{% if student.link  %}
-				<a href="{{student.link}}" target="_blank">{{student.name}}</a>
+					<a href="{{student.link}}" target="_blank">{{student.name}}</a>
 			{% else %}
-				{{student.name}}
+					{{student.name}}
 			{% endif %}
-			({% for role in student.roles %}{{role.title}} {{role.start}} - {{role.end}}{% if forloop.last == false %};{% endif %}{% endfor %})
-			{% if forloop.last == false %}<br/>{% endif %}
+				</div>
+			<div class="student-role">({% for role in student.roles %}{{role.title}} {{role.start}} - {{role.end}}{% if forloop.last == false %};{% endif %}{% endfor %})</div>
+			
+			{% if forloop.last == false %}
+			{% endif %}
 		{% endfor %}
 		</div>
 		<br/>
@@ -326,8 +330,8 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 						</div>
 					</div>
 					{% endfor %}
-					<div class="fancy-border" style="grid-column: 1 / 3;">
-						<span class="heading">Others</span>
+					<!-- <div class="fancy-border" style="grid-column: 1 / 3;">
+						<span class="heading">Miscellenia</span>
 					</div>
 					<img alt="A deformation of a bar." class="teaser" src="html/projects/IGS2016/teaser.jpg"  title="A course on practical aspects of map-computation."/>
 					<div class="paper-cell">
@@ -336,7 +340,8 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 							Tutorial given at the IGS 2016 summer school (with Shahar Kovalsky)
 							<br/>  <a class="paper-link" data-size="15" href="html/projects/IGS2016/slide.pdf">Slides (pdf)</a> 
 						</div>
-					</div>
+					</div> -->
+					<div class="fancy-border" style="grid-column: 1 / 3;"></div>
 				</div>
 			<a href="https://pbs.twimg.com/media/EoZdmz4XIAIYx16?format=jpg&name=large" target="_blank">Research, in a nutshell</a>
 		</div>
