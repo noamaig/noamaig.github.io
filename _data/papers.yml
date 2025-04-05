@@ -19,6 +19,16 @@
     "Paper": "https://arxiv.org/abs/2408.14899"
     "Project Page": "https://threedle.github.io/MeshUp/"
 
+  img: "html/temporally_consistent.jpg"
+  img_alt: "A horse reconstructed from a point cloud, using our method."
+  explanation: "An extension to the ICCV 2021 paper."
+  authors: "Jan Bednarik, Noam Aigerman, Vladimir G. Kim, Siddhartha Chaudhuri, Shaifali Parashar, Mathieu Salzmann, Pascal Fua"
+  title: "Temporally-Consistent Surface Reconstruction using Metrically-Consistent Atlases"
+  venue: "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2025"
+  links:
+    "Paper": "https://arxiv.org/abs/2111.06838"
+    "Code": "https://github.com/bednarikjan/temporally_coherent_surface_reconstruction"
+
 
 - img: "html/magicclay.jpg"
   img_alt: "A chosen region on the back of the armadillo is deformed to different types of wings, based on different input text prompts."
@@ -131,6 +141,15 @@
     Paper: "https://arxiv.org/abs/2212.06344"
     "Project page": "https://threedle.github.io/DA-Wand/"
 
+- img: "html/prox_multi.jpg"
+  img_alt: "Multiple axis of symmetry detected on a 3D object, using a proximal operator."
+  explanation: "A method to find multiple different minima of an optimization problem, with applications in symmetry detection."
+  authors: "Lingxiao Li, Noam Aigerman, Vladimir G. Kim, Jiajin Li, Kristjan Greenewald, Mikhail Yurochkin, Justin Solomon"
+  venue: "ICLR 2023"
+  title: "Learning Proximal Operators to Discover Multiple Optima"
+  links:
+    Paper: "https://arxiv.org/abs/2201.11945"
+    Code: "https://github.com/lingxiaoli94/POL"
 
 
 - img: "html/projects/isoinj/isoinj.jpg"
