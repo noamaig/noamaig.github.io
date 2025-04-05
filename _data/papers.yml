@@ -19,7 +19,7 @@
     "Paper": "https://arxiv.org/abs/2408.14899"
     "Project Page": "https://threedle.github.io/MeshUp/"
 
-  img: "html/temporally_consistent.jpg"
+- img: "html/temporally_consistent.jpg"
   img_alt: "A horse reconstructed from a point cloud, using our method."
   explanation: "An extension to the ICCV 2021 paper."
   authors: "Jan Bednarik, Noam Aigerman, Vladimir G. Kim, Siddhartha Chaudhuri, Shaifali Parashar, Mathieu Salzmann, Pascal Fua"
