@@ -13,7 +13,7 @@ ol{
   /* left: -2px; */
   grid-column: 2;
 }
-#students-div{
+.students-div{
   display: grid;
   grid-template-columns: repeat(auto-fit, min-content);
   gap: 0px;

@@ -246,14 +246,13 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 
 
 
-		<div id="pub" style="padding-top:20px">
+		<div style="padding-top:20px; padding-bottom: 5px; ">
 			<div class="fancy-border">
 			<span class="heading">Group</span>
 			</div>
-			<br/>
 		</div>
 		
-		<div id="students-div">
+		<div class="students-div">
 		{% for student in site.data.students %}
 				<div class="student-name">
 			{% if student.link  %}
@@ -273,17 +272,18 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 
 
 
-		<div id="pub" style="padding-top:20px">
+		<div style="padding-top:10px; padding-bottom: 5px;">
 			<div class="fancy-border">
 			<span class="heading">Teaching</span>
 			</div>
-			<br/>
-			
 		</div>
-		<div>
+		<div class="students-div">
 			{% for class in site.data.classes %}
-			<a href="{{class.link}}" target ="_blank">{{class.name}}</a>  ({{class.semester | downcase}})
-			{% if forloop.last == false %}<br/>{% endif %}
+			<div class="student-name"><a href="{{class.link}}" target ="_blank">{{class.name}}</a></div>
+			<div class="student-role">({{class.semester | downcase}})</div>
+			{% comment %}
+				{% if forloop.last == false %}<br/>{% endif %}
+			{% endcomment %}
 			{% endfor %}
 		</div>
 		<div style="clear:both">
@@ -292,13 +292,13 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 		</div>
 
 			<br><br>
-			<div id="pub" style="padding-top:20px">
-				<div class="fancy-border">
-				<span class="heading">Publications</span>
-				&nbsp
-				<span id="hoverhint" class="subheading" style="white-space: nowrap;"> (hover over a project's image for a one-sentence summary)</span>
+			<div id="pub" style="padding-top:10px">
+				<div class="fancy-border" style="margin-bottom: 10px;">
+					<span class="heading">Publications</span>
+					&nbsp
+					<span id="hoverhint" class="subheading" style="white-space: nowrap;"> (hover over a project's image for a one-sentence summary)</span>
 				</div>
-				<br/>
+				
 				<div class="paper-grid" style="padding-top:5px">				
 					{% for item in site.data.papers %}
 					<img alt="{{ item.img_alt | escape }}" class="teaser" src="{{ item.img }}"  title="{{ item.explanation | escape }}"/>
@@ -330,9 +330,11 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 						</div>
 					</div>
 					{% endfor %}
-					<!-- <div class="fancy-border" style="grid-column: 1 / 3;">
+
+					{% comment %}
+					<div class="fancy-border" style="grid-column: 1 / 3;">
 						<span class="heading">Miscellenia</span>
-					</div>
+https://pbs.twimg.com/media/EoZdmz4XIAIYx16?format=jpg&name=large					</div>
 					<img alt="A deformation of a bar." class="teaser" src="html/projects/IGS2016/teaser.jpg"  title="A course on practical aspects of map-computation."/>
 					<div class="paper-cell">
 						<div class="paper-title">Computational Aspects of Mappings</div>
@@ -340,7 +342,8 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 							Tutorial given at the IGS 2016 summer school (with Shahar Kovalsky)
 							<br/>  <a class="paper-link" data-size="15" href="html/projects/IGS2016/slide.pdf">Slides (pdf)</a> 
 						</div>
-					</div> -->
+					</div>
+					{% endcomment %}
 					<div class="fancy-border" style="grid-column: 1 / 3;"></div>
 				</div>
 			<a href="https://pbs.twimg.com/media/EoZdmz4XIAIYx16?format=jpg&name=large" target="_blank">Research, in a nutshell</a>
