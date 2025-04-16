@@ -2,6 +2,7 @@
 - name: "IFT6095 - Neural Geometry Processing"
   link: "course_NGP.html"
   semester: "Fall 2025"
+  future: true
 
 - name: "IFT6095 - Neural Geometry Processing"
   link: "course_NGP.html"

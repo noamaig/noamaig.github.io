@@ -246,7 +246,7 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 
 
 
-		<div style="padding-top:20px; padding-bottom: 5px; ">
+		<div style="padding-top:20px; padding-bottom: 15px; ">
 			<div class="fancy-border">
 			<span class="heading">Group</span>
 			</div>
@@ -272,18 +272,28 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 
 
 
-		<div style="padding-top:10px; padding-bottom: 5px;">
+		<div style="padding-top:20px; padding-bottom: 15px;">
 			<div class="fancy-border">
 			<span class="heading">Teaching</span>
 			</div>
 		</div>
+		{% assign first_past = true %}
+		{% assign first_future = true %}
 		<div class="students-div">
 			{% for class in site.data.classes %}
+
+			{% if first_future and class.future == true %}
+				{% assign first_future = false %}
+      			<div style="position: relative;left: -5px;">Upcomig:</div>
+    		{% endif %}
+
+			{% if first_past and class.future != true %}
+				{% assign first_past = false %}
+				
+      			<div style="position: relative;left: -5px;">Past:</div>
+    		{% endif %}
 			<div class="student-name"><a href="{{class.link}}" target ="_blank">{{class.name}}</a></div>
 			<div class="student-role">({{class.semester | downcase}})</div>
-			{% comment %}
-				{% if forloop.last == false %}<br/>{% endif %}
-			{% endcomment %}
 			{% endfor %}
 		</div>
 		<div style="clear:both">
@@ -293,7 +303,7 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 
 			<br><br>
 			<div id="pub" style="padding-top:10px">
-				<div class="fancy-border" style="margin-bottom: 10px;">
+				<div class="fancy-border" style="margin-bottom: 30px;">
 					<span class="heading">Publications</span>
 					&nbsp
 					<span id="hoverhint" class="subheading" style="white-space: nowrap;"> (hover over a project's image for a one-sentence summary)</span>
