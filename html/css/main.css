@@ -191,6 +191,7 @@ min-width: 180px;
   font-size: 15px;
   padding-left: 5pt;
   color: rgb(40,80,150);
+  padding-top: 10px;
 }
 #affiliations a {
   font-weight: normal;
