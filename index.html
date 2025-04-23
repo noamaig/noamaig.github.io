@@ -261,7 +261,21 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 					{{student.name}}
 			{% endif %}
 				</div>
-			<div class="student-role">({% for role in student.roles %}{{role.title}} {{role.start}} - {{role.end}}{% if forloop.last == false %};{% endif %}{% endfor %})</div>
+			<div class="student-role">
+				{% assign role_str = "(" %}
+				{% for role in student.roles %}
+					{% if role.start == role.end %}
+						{% assign duration = role.end %}
+					{% else %}
+						{% assign duration = role.start | append: " - " | append: role.end %}
+					{% endif %}
+					{% assign role_str = role_str | append: role.title | append: ", " | append: duration %}
+					{% if forloop.last == false %}
+						{% assign role_str = role_str | append: ";" %}
+					{% endif %}
+				{% endfor %}
+				{{role_str}})
+			</div>
 			
 			{% if forloop.last == false %}
 			{% endif %}
