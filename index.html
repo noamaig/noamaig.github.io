@@ -159,7 +159,7 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 				<div>
 					<div style="clear: both;" class="subheading"><!-- padding-top: 12px; -->
 						<div id = "affiliations">
-							<span style="white-space: nowrap;">Assistant Professor,</span> <span style="white-space: nowrap;"><a target="_blank"  href="https://www.umontreal.ca/en/">University of Montreal</a></span><br>
+							<span style="white-space: nowrap;">Associate Professor,</span> <span style="white-space: nowrap;"><a target="_blank"  href="https://www.umontreal.ca/en/">University of Montreal</a></span><br>
 							<span style="white-space: nowrap;">Associate Academic Member,</span> <span style="white-space: nowrap;"><a target="_blank" href="https://mila.quebec/en/">Mila</a></span>
 						</div>
 						
@@ -232,7 +232,7 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 				</div>
 				<br>
 				<div id="about">
-					<span style="text-decoration: underline;"></span> I work on problems related to machine learning and 3D geometry. My research lies at the intersection of <span style="font-style: italic;">geometry processing</span>, <span style="font-style: italic;">deep learning</span>, and <span style="font-style: italic;">optimization</span>, with applications in <span style="font-style: italic;">3D vision</span> and <span style="font-style: italic;">computer graphics</span>. Currently, I mostly focus on using geometry processing to devise thoeretically-grounded machine learning approaches for 3D problems; and, vice-versa, approaching geometry processing tasks from a machine learning perspective. 
+					<span style="text-decoration: underline;"></span> I work on problems related to machine learning and 3D geometry. Namely, my research lies at the intersection of <span style="font-style: italic;">geometry processing</span>, <span style="font-style: italic;">deep learning</span>, and <span style="font-style: italic;">optimization</span>, with applications in <span style="font-style: italic;">3D vision</span> and <span style="font-style: italic;">computer graphics</span>. <br/>Currently, I mostly focus on using geometry processing to devise thoeretically-grounded machine learning approaches for 3D problems; and, vice-versa, approaching geometry processing tasks from a machine learning perspective. 
 				</div>
 			</div>
 			<div id="mebox">
@@ -262,7 +262,7 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 			{% endif %}
 				</div>
 			<div class="student-role">
-				{% assign role_str = "(" %}
+				{% assign role_str = "" %}
 				{% for role in student.roles %}
 					{% if role.start == role.end %}
 						{% assign duration = role.end %}
@@ -274,7 +274,7 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 						{% assign role_str = role_str | append: ";" %}
 					{% endif %}
 				{% endfor %}
-				{{role_str}})
+				({{role_str}})
 			</div>
 			
 			{% if forloop.last == false %}
@@ -298,13 +298,13 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 
 			{% if first_future and class.future == true %}
 				{% assign first_future = false %}
-      			<div style="position: relative;left: -5px;">Upcomig:</div>
+      			<div style="position: relative;left: -5px;">Current Year:</div>
     		{% endif %}
 
 			{% if first_past and class.future != true %}
 				{% assign first_past = false %}
 				
-      			<div style="position: relative;left: -5px;">Past:</div>
+      			<div style="position: relative;left: -5px;padding-top: 10px;">Past Years:</div>
     		{% endif %}
 			<div class="student-name"><a href="{{class.link}}" target ="_blank">{{class.name}}</a></div>
 			<div class="student-role">({{class.semester | downcase}})</div>
@@ -345,7 +345,12 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 							{% if item.links %}
 							<div class="paper-links">
 								{% for link in item.links %}
-								<a href="{{ link[1] }}" target="_blank">{{ link[0] }}</a> {% unless forloop.last %} | {% endunless %}	
+								{% if link[1] == "" %}
+									{{ link[0] }}
+								{% else %}
+									<a href="{{ link[1] }}" target="_blank">{{ link[0] }}</a> 
+								{% endif %}
+								{% unless forloop.last %} | {% endunless %}	
 								{% endfor %}
 							</div>
 							{% else %}

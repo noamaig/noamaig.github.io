@@ -1,3 +1,47 @@
+- img: "html/poissonnet.jpg"
+  img_alt: "various experiments from the paper: deforming characters to arbitrary poses; segmenting characters; reproducing a high-frequency deformation of a piece of paper."
+  explanation: "An architecture for learning signals over meshes, which is triangulation agnostic, while being more efficient and accurate than previous methods."
+  authors: "Arman Maesumi, Tanish Makadia, Thibault Groueix, Vladimir G. Kim, Daniel Ritchie, Noam Aigerman"
+  title: "PoissonNet: A Local-Global Approach for Learning on Surfaces"
+  venue: "SIGGRAPH Asia 2025"
+  links:
+    "Paper": "https://armanmaesumi.github.io/papers/2025_poissonnet/sigg25_poissonnet.pdf"
+    "Project Page": "https://armanmaesumi.github.io/poissonnet/"
+    "Code": "https://github.com/ArmanMaesumi/poissonnet"
+
+- img: "html/neuralfluids.jpg"
+  img_alt: "A fluid simulation created using the neural basis."
+  explanation: "Computing basis functions which enable efficient water simulation, by optimizing a neural network to predict functions that satisfy several properties that provide a good basis."
+  authors: "Yibo Liu, Paul Kry, Kenny Erleben, Noam Aigerman, Sune Darkner, Teseo Schneider"
+  title: "Neural Kinematic Bases for Fluids"
+  venue: "SIGGRAPH Asia 2025"
+  links:
+    "Paper": "https://arxiv.org/pdf/2410.06324"
+    "Code (coming soon)": ""
+
+- img: "html/dQP.jpg"
+  img_alt: "(sorry, not a graphics/vision paper so no pretty images) The core idea of the method: perturbation of the constraint polytopes leads to a perturbation of the solution, while non-active constraints can be ignored."
+  explanation: "A framework for efficient and solver-agnostic differentiation of SOCP constraints."
+  authors: "Connor W. Magoon, Fengyu Yang, Noam Aigerman, Shahar Z. Kovalsky"
+  title: "Differentiation Through Black-Box Quadratic Programming Solvers"
+  venue: "NeurIPS 2025"
+  links:
+    "Paper": "https://arxiv.org/pdf/2410.06324"
+    "Code (coming soon)": ""
+
+
+- img: "html/viewdependent.jpg"
+  img_alt: "Bottom row: a model viewed from varying viewpoints does not fit the target sketch (bottom left, red); our method enables deform the model to fit to the sketch (top left) while still appearing the same as before from other views (top row)."
+  explanation: "A method for authoring non-realistic deformations of an object that change based on viewpoint."
+  authors: "Martin El Mqirmi, Noam Aigerman"
+  title: "View-Dependent Deformation Fields for 2D Editing of 3D Models"
+  venue: "ACM/EG Expressive Symposium 2025"
+  links:
+    "Paper": "https://arxiv.org/pdf/2504.05544"
+    "Code": "https://github.com/Martin-elmqirmi/view_dependent_deformation_fields"
+    "Project Page": "https://martin-elmqirmi.github.io/view_dependent_deformation_fields_project_page/"
+
+
 - img: "html/instant3dit.jpg"
   img_alt: "A 3D model of a bear is kept intact while adding wings (guided by a text prompt), by masking part of the object (purple ellipsoid) and reconstructing that part."
   explanation: "A method for localizing text-guided edits of 3D models, using masking."
@@ -14,7 +58,7 @@
   explanation: "Text-guided deformation, with ability to blend between few different targets."
   authors: "Hyunwoo Kim, Itai Lang, Thibault Groueix, Noam Aigerman, Vladimir G. Kim, Rana Hanocka"
   title: "MeshUp: Multi-Target Mesh Deformation via Blended Score Distillation"
-  venue: "3DV 2025 (Oral)"
+  venue: "3DV 2025 (best paper runnerup)"
   links:
     "Paper": "https://arxiv.org/abs/2408.14899"
     "Project Page": "https://threedle.github.io/MeshUp/"
