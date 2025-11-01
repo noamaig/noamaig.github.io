@@ -3,9 +3,9 @@
   explanation: "An architecture for learning signals over meshes, which is triangulation agnostic, while being more efficient and accurate than previous methods."
   authors: "Arman Maesumi, Tanish Makadia, Thibault Groueix, Vladimir G. Kim, Daniel Ritchie, Noam Aigerman"
   title: "PoissonNet: A Local-Global Approach for Learning on Surfaces"
-  venue: "SIGGRAPH Asia 2025"
+  venue: "ACM Transactions on Graphics (SIGGRAPH Asia 2025)"
   links:
-    "Paper": "https://armanmaesumi.github.io/papers/2025_poissonnet/sigg25_poissonnet.pdf"
+    "Paper": "https://arxiv.org/pdf/2510.14146"
     "Project Page": "https://armanmaesumi.github.io/poissonnet/"
     "Code": "https://github.com/ArmanMaesumi/poissonnet"
 
@@ -14,7 +14,7 @@
   explanation: "Computing basis functions which enable efficient water simulation, by optimizing a neural network to predict functions that satisfy several properties that provide a good basis."
   authors: "Yibo Liu, Paul Kry, Kenny Erleben, Noam Aigerman, Sune Darkner, Teseo Schneider"
   title: "Neural Kinematic Bases for Fluids"
-  venue: "SIGGRAPH Asia 2025"
+  venue: "ACM SIGGRAPH Asia 2025"
   links:
     "Paper": "https://arxiv.org/pdf/2410.06324"
     "Code (coming soon)": ""
@@ -27,7 +27,7 @@
   venue: "NeurIPS 2025"
   links:
     "Paper": "https://arxiv.org/pdf/2410.06324"
-    "Code (coming soon)": ""
+    "Code": "https://github.com/cwmagoon/dQP"
 
 
 - img: "html/viewdependent.jpg"

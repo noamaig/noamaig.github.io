@@ -253,32 +253,51 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 		</div>
 		
 		<div class="students-div">
-		{% for student in site.data.students %}
-				<div class="student-name">
-			{% if student.link  %}
-					<a href="{{student.link}}" target="_blank">{{student.name}}</a>
+		{% assign bools = "false,true" | split: "," %}
+		{% for output_graduated in bools %}
+			<div style="position: relative;left: -5px;font-weight: bold;padding-bottom: 5px;">
+			{% if output_graduated == "false" %}
+    			Current:
 			{% else %}
-					{{student.name}}
-			{% endif %}
-				</div>
-			<div class="student-role">
-				{% assign role_str = "" %}
-				{% for role in student.roles %}
-					{% if role.start == role.end %}
-						{% assign duration = role.end %}
-					{% else %}
-						{% assign duration = role.start | append: " - " | append: role.end %}
-					{% endif %}
-					{% assign role_str = role_str | append: role.title | append: ", " | append: duration %}
-					{% if forloop.last == false %}
-						{% assign role_str = role_str | append: ";" %}
-					{% endif %}
-				{% endfor %}
-				({{role_str}})
-			</div>
+			<br>
+				Past:
+  			{% endif %}
 			
-			{% if forloop.last == false %}
-			{% endif %}
+			</div>
+			{% for student in site.data.students %}
+				{% if output_graduated == "false" and student.finished == true %}
+    					{% continue %}
+  				{% endif %}
+				{% if output_graduated == "true" and student.finished != true %}
+    					{% continue %}
+  				{% endif %}
+					<div class="student-name">
+				{% if student.link  %}
+						<a href="{{student.link}}" target="_blank">{{student.name}}</a>
+				{% else %}
+						{{student.name}}
+				{% endif %}
+					</div>
+				<div class="student-role">
+					{% assign role_str = "" %}
+					{% for role in student.roles %}
+						{% if role.start == role.end %}
+							{% assign duration = role.end %}
+						{% else %}
+							{% assign duration = role.start | append: " - " | append: role.end %}
+						{% endif %}
+
+						{% assign role_str = role_str | append: role.title | append: ", " | append: duration %}
+						{% if forloop.last == false %}
+							{% assign role_str = role_str | append: ";" %}
+						{% endif %}
+					{% endfor %}
+					({{role_str}})
+				</div>
+				
+				{% if forloop.last == false %}
+				{% endif %}
+			{% endfor %}
 		{% endfor %}
 		</div>
 		<br/>
