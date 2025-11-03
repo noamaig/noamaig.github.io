@@ -2,8 +2,13 @@ ol{
   list-style-type:none;
   padding: 0px;
 }
+.student-group{
+  font-weight: bold;
+  padding-bottom: 7px;
+}
 .student-name{
   grid-column: 1;
+  padding-left: 18px;
 }
 .student-role{
   font-size: small;

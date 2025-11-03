@@ -255,12 +255,12 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 		<div class="students-div">
 		{% assign bools = "false,true" | split: "," %}
 		{% for output_graduated in bools %}
-			<div style="position: relative;left: -5px;font-weight: bold;padding-bottom: 5px;">
+			<div style="position: relative;left: -0px;" class="student-group">
 			{% if output_graduated == "false" %}
     			Current:
 			{% else %}
 			<br>
-				Past:
+				Alumni:
   			{% endif %}
 			
 			</div>
@@ -317,13 +317,12 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 
 			{% if first_future and class.future == true %}
 				{% assign first_future = false %}
-      			<div style="position: relative;left: -5px;">Current Year:</div>
+      			<div style="position: relative;left: -0px;" class="student-group">Current Year:</div>
     		{% endif %}
 
 			{% if first_past and class.future != true %}
 				{% assign first_past = false %}
-				
-      			<div style="position: relative;left: -5px;padding-top: 10px;">Past Years:</div>
+      			<div style="position: relative;left: -0px;padding-top: 10px;"class="student-group"><br>Past Years:</div>
     		{% endif %}
 			<div class="student-name"><a href="{{class.link}}" target ="_blank">{{class.name}}</a></div>
 			<div class="student-role">({{class.semester | downcase}})</div>
