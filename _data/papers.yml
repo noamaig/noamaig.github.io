@@ -47,7 +47,7 @@
   explanation: "Computing basis functions which enable efficient water simulation, by optimizing a neural network to predict functions that satisfy several properties that provide a good basis."
   authors: "Yibo Liu, Paul Kry, Kenny Erleben, Noam Aigerman, Sune Darkner, Teseo Schneider"
   title: "Neural Kinematic Bases for Fluids"
-  venue: "ACM SIGGRAPH Asia 2025"
+  venue: "SIGGRAPH Asia 2025 Conference Proceedings"
   links:
     "Paper": "https://arxiv.org/pdf/2410.06324"
     "Code (coming soon)": ""
@@ -112,7 +112,7 @@
   explanation: "Enabling local text-guided edits of meshes via a hybrid mesh/SDF representation."
   authors: "Amir Barda, Vladimir Kim, Noam Aigerman, Amit Haim Bermano, Thibault Groueix"
   title: "MagicClay: Sculpting Meshes With Generative Neural Fields"
-  venue: "ACM SIGGRAPH Asia 2024"
+  venue: "SIGGRAPH Asia 2024 Conference Proceedings"
   links:
     "Paper": "https://arxiv.org/pdf/2403.02460"
     "Project Page": "https://amirbarda.github.io/MagicClay.github.io/"
@@ -144,7 +144,7 @@
   explanation: "A generative method to generate tiles that can be copied to tile the plane. The core technical contribution is a differentiable representation of the space of valid tiles."
   authors: "Noam Aigerman, Thibault Groueix"
   title: "Generative Escher Meshes"
-  venue: "ACM SIGGRAPH 2024"
+  venue: "SIGGRAPH 2024 Conference Proceedings"
   links:
     #"Paper (hi-res)": "html/escher_full.pdf"
     "Paper": "https://arxiv.org/pdf/2309.14564"
@@ -176,7 +176,7 @@
   explanation: "Using an existing generative model for point clouds to generate and control deformations of meshes."
   title: "Explorable Mesh Deformation Subspaces from Unstructured 3D Generative Models"
   authors: "Arman Maesumi, Paul Guerrero, Vladimir G. Kim, Matthew Fisher, Siddhartha Chaudhuri, Noam Aigerman, Daniel Ritchie"
-  venue: "ACM SIGGRAPH Asia 2023"
+  venue: "SIGGRAPH Asia 2023 Conference Proceedings"
   links:
     "Project page": "https://armanmaesumi.github.io/explorable_subspaces/"
 - img: "html/textdeformer.jpg"
@@ -184,7 +184,7 @@
   explanation: "Deforming 3D meshes based on text prompts, by rendering the mesh from various view angles and using a trained visual encoder (CLIP), with a tailor-made deformation module which can consolidate the different viewpoints in a meaningful way."
   title: "TextDeformer: Geometry Manipulation using Text Guidance"
   authors: "William Gao, Noam Aigerman, Thibault Groueix, Vladimir G. Kim, Rana Hanocka"
-  venue: "ACM SIGGRAPH 2023"
+  venue: "SIGGRAPH 2023 Conference Proceedings"
   links:
     "Project page": "https://threedle.github.io/TextDeformer/"
 
@@ -196,7 +196,7 @@
   links:
     Paper: "https://arxiv.org/abs/2305.08296"
   authors: "Dafei Qin, Jun Saito, Noam Aigerman, Thibault Groueix, Taku Komura"
-  venue: "ACM SIGGRAPH 2023"
+  venue: "SIGGRAPH 2023 Conference Proceedings"
 
 
 - img: "html/neural_progressive.jpg"
@@ -204,7 +204,7 @@
   explanation: "Compressing a mesh, by encoding it as coarse mesh and neural features, enabling to progressively refine the coarse mesh as additional features are transmitted."
   title: "Neural Progressive Meshes"
   authors: "Yun-Chun Chen, Vladimir G. Kim, Noam Aigerman, Alec Jacobson"
-  venue: "ACM SIGGRAPH 2023"
+  venue: "SIGGRAPH 2023 Conference Proceedings"
   links:
     Paper: "https://arxiv.org/abs/2308.05741"
 
@@ -234,7 +234,7 @@
   explanation: "An energy that penalizes both lack of injectivity and high isometric distortion at the same time, enabling computation of 1-to-1 and low-distortion maps with arbitrary positional constraints."
   authors: "Xingyi Du, Danny M. Kaufman, Qingnan Zhou, Shahar Z. Kovalsky, Yajie Yan, Noam Aigerman, Tao Ju"
   title: "Isometric Energies for Recovering Injectivity in Constrained Mapping"
-  venue: "ACM SIGGRAPH Asia 2022"
+  venue: "SIGGRAPH Asia 2022 Conference Proceedings"
   links:
    "Project page": "https://duxingyi-charles.github.io/publication/isometric-energies-for-recovering-injectivity-in-constrained-mapping/"
 
@@ -263,7 +263,7 @@
   explanation: "A framework for learning to deform meshes in a highly detail-preserving manner, without being tied to a specific mesh."
   authors: "Noam Aigerman, Kunal Gupta, Vladimir G. Kim, Siddhartha Chaudhuri,  Jun Saito, Thibault Groueix"
   title: "Neural Jacobian Fields: Learning Intrinsic Mappings of Arbitrary Meshes"
-  venue: "ACM SIGGRAPH 2022 (journal track)"
+  venue: "ACM Transactions on Graphics (SIGGRAPH 2022)"
   links:
    "Paper": "https://arxiv.org/abs/2205.02904"
    "Code": "https://github.com/ThibaultGROUEIX/NeuralJacobianFields"
@@ -273,7 +273,7 @@
   explanation: "Defining mobius-equivariant convolutions on the sphere."
   authors: "Thomas Mitchel, Noam Aigerman, Vladimir G. Kim, Michael Kazhdan"
   title: "Mobius Convolutions for Spherical CNNs"
-  venue: "ACM SIGGRAPH 2022"
+  venue: "SIGGRAPH 2022 Conference Proceedings"
   links:
    "Paper": "https://www.mitchel.computer/papers/MobConv_2022.pdf"
    "Code": "https://github.com/twmitchel/MobiusConv"
@@ -301,7 +301,7 @@
   explanation: "A continuous representation of the space of triangulations using 2D power diagrams, enabling using gradient-descent methods (namely within the context of deep learning) to optimize and learn triangulations."
   authors: "Marie-Julie Rakotosaona, Noam Aigerman, Niloy Mitra, Maks Ovsjanikov, Paul Guerrero"
   title: "Differentiable Surface Triangulation"
-  venue: "ACM SIGGRAPH ASIA 2021"
+  venue: "ACM Transactions on Graphics (SIGGRAPH Asia 2021)"
   links:
    "Paper ": "https://arxiv.org/abs/2109.10695"
    "Code": "https://github.com/mrakotosaon/diff-surface-triangulation"
@@ -311,7 +311,7 @@
   explanation: "A smooth energy that when optimized yields globally-injective parameterizations (without triangles folding over and without parts of the boundaries overlapping one another)."
   authors: " Xingyi Du, Danny M. Kaufman, Qingnan Zhou, Shahar Z. Kovalsky, Yajie Yan,  Noam Aigerman, Tao Ju"
   title: "Optimizing Global Injectivity for Constrained Parameterization"
-  venue: "ACM SIGGRAPH ASIA 2021"
+  venue: "ACM Transactions on Graphics (SIGGRAPH Asia 2021)"
   links:
    "Project Page ": "https://duxingyi-charles.github.io/publication/optimizing-global-injectivity-for-constrained-parameterization/"
 
@@ -331,7 +331,7 @@ Mathieu Salzmann, Pascal Fua, Noam Aigerman"
   explanation: "An algorithm for robustly computing the total volume occupied by a shape as it's moving along a trajectory."
   authors: "Silvia Sellán, Noam Aigerman, Alec Jacobson"
   title: "Swept Volumes via Spacetime Numerical Continuation"
-  venue: "ACM SIGGRAPH 2021"
+  venue: "ACM Transactions on Graphics (SIGGRAPH 2021)"
   links:
    "Project Page ": "https://www.dgp.toronto.edu/projects/swept-volumes/"
 
@@ -377,7 +377,7 @@ Mathieu Salzmann, Pascal Fua, Noam Aigerman"
   explanation: "An algorithm that computes heightfields that are  piecewise-developalbe (can be created by bending sheets of paper) from input heightfields. The core theoretical idea uses intuition from compressed sensing, and an observation regarding the low rank of the hessian of developable heightfields. "
   authors: "Silvia Sellán, Noam Aigerman, Alec Jacobson"
   title: "Developability of Heightfields via Rank Minimization"
-  venue: "ACM SIGGRAPH 2020"
+  venue: "ACM Transactions on Graphics (SIGGRAPH 2020)"
   links:
    "Project Page ": "https://www.dgp.toronto.edu/projects/compressed-developables/"
 
@@ -386,7 +386,7 @@ Mathieu Salzmann, Pascal Fua, Noam Aigerman"
   explanation: "Training a neural network to apply data-driven recursive subdivision operations."
   authors: "Hsueh-Ti Derek Liu, Vladimir G. Kim, Siddhartha Chaudhuri, Noam Aigerman, Alec Jacobson "
   title: "Neural Subdivision"
-  venue: "ACM SIGGRAPH 2020"
+  venue: "ACM Transactions on Graphics (SIGGRAPH 2020)"
   links:
    "Paper": "https://arxiv.org/abs/2005.01819"
    "Code": "https://www.dgp.toronto.edu/projects/neural-subdivision/"
@@ -396,7 +396,7 @@ Mathieu Salzmann, Pascal Fua, Noam Aigerman"
   explanation: "An algorithm minimizing an energy designed specifically to recover injectivity of a map."
   authors: "Xingyi Du, Noam Aigerman, Qingnan Zhou, Shahar Kovalsky, Yajie Yan, Danny M. Kaufman, Tao Ju "
   title: "Lifting Simplices to Find Injectivity"
-  venue: "ACM SIGGRAPH 2020"
+  venue: "ACM Transactions on Graphics (SIGGRAPH 2020)"
   links:
    " Paper": "https://duxingyi-charles.github.io/publication/lifting-simplices-to-find-injectivity/Lifting-Simplices-to-Find-Injectivity.pdf"
    " Project Page": "https://duxingyi-charles.github.io/publication/lifting-simplices-to-find-injectivity/"
@@ -428,7 +428,7 @@ Mathieu Salzmann, Pascal Fua, Noam Aigerman"
   explanation: "An extension of the orbifold Tutte embeddings to spherical domains."
   authors: "Noam Aigerman, Shahar Kovalsky, Yaron Lipman"
   title: "Spherical Orbifold Tutte Embeddings"
-  venue: "ACM SIGGRAPH 2017"
+  venue: "ACM Transactions on Graphics (SIGGRAPH 2017)"
   links:
    "Paper": "html/projects/spherical/highres.pdf"
    "Low Res": "html/projects/spherical/lowres.pdf"
@@ -439,7 +439,7 @@ Mathieu Salzmann, Pascal Fua, Noam Aigerman"
   explanation: "Applyig CNN's to spherical surfaces, by using the orbifold Tutte embeddings to bijectively and seamlessly embed 4 copies of the surface into a square image with cyclic boundary conditions, which enables regular 2D convolution."
   authors: "Haggai Maron, Meirav Galun, Noam Aigerman, Miri Trope, Nadav Dym, Ersin Yumer, Vladimir G. Kim, Yaron Lipman"
   title: "Convolutional Neural Networks on Surfaces via Seamless Toric Covers"
-  venue: "ACM SIGGRAPH 2017"
+  venue: "ACM Transactions on Graphics (SIGGRAPH 2017)"
   links:
    "Paper": "html/projects/orbifold_learning/highres.pdf"
    "Low Res": "html/projects/orbifold_learning/lowres.pdf"
@@ -450,7 +450,7 @@ Mathieu Salzmann, Pascal Fua, Noam Aigerman"
   explanation: "An extension of Tutte's embedding to hyperbolic domains."
   authors: "Noam Aigerman, Yaron Lipman"
   title: "Hyperbolic Orbifold Tutte Embeddings"
-  venue: "ACM SIGGRAPH Asia 2016"
+  venue: "ACM Transactions on Graphics (SIGGRAPH Asia 2016)"
   links:
    "Paper": "html/projects/hyperbolic/hyperbolic.pdf"
    "Low Res": "html/projects/hyperbolic/hyperbolic_low.pdf"
@@ -461,7 +461,7 @@ Mathieu Salzmann, Pascal Fua, Noam Aigerman"
   explanation: "An extension of Tutte's embedding for boundaryless parameterizations of spheres."
   authors: "Noam Aigerman, Yaron Lipman"
   title: "Orbifold Tutte Embeddings"
-  venue: "ACM SIGGRAPH Asia 2015"
+  venue: "ACM Transactions on Graphics (SIGGRAPH Asia 2015)"
   links:
    "Paper": "html/projects/orbifold/orbifold_highres.pdf"
    "Low Res": "html/projects/orbifold/orbifold_lowres.pdf"
@@ -472,7 +472,7 @@ Mathieu Salzmann, Pascal Fua, Noam Aigerman"
   explanation: "An efficient algorithm for computing large-scale bounded distortion maps of meshes."
   authors: "Shahar Kovalsky, Noam Aigerman, Ronen Basri, Yaron Lipman"
   title: "Large Scale Bounded Distortion Mappings"
-  venue: "ACM SIGGRAPH Asia 2015"
+  venue: "ACM Transactions on Graphics (SIGGRAPH Asia 2015)"
   links:
    "Paper": "html/projects/largescale/LargeScaleBD.pdf"
    "Low Res": "html/projects/largescale/LargeScaleBD_lowRes.pdf"
@@ -483,7 +483,7 @@ Mathieu Salzmann, Pascal Fua, Noam Aigerman"
   explanation: "Computing bijections between surface-meshes in a way which is agnostic to the cutting of the meshes."
   authors: "Noam Aigerman, Roi Poranne, Yaron Lipman"
   title: "Seamless Surface Mappings"
-  venue: "ACM SIGGRAPH 2015"
+  venue: "ACM Transactions on Graphics (SIGGRAPH 2015)"
   links:
    "Paper": "html/projects/seamless/seamless.pdf"
    "Low Res": "html/projects/seamless/seamless_lowres.pdf"
@@ -493,7 +493,7 @@ Mathieu Salzmann, Pascal Fua, Noam Aigerman"
   explanation: 'Computing low-distortion bijections between surface-meshes by recovering ("lifting") these bijections from self-overlapping flattenings.'
   authors: "Noam Aigerman, Roi Poranne, Yaron Lipman"
   title: "Lifted Bijections for Low Distortion Surface Mappings"
-  venue: "ACM SIGGRAPH 2014"
+  venue: "ACM Transactions on Graphics (SIGGRAPH 2014)"
   links:
    "Paper": "html/projects/lifted/lifted.pdf"
    "Low Res": "html/projects/lifted/lifted_lowres.pdf"
@@ -503,7 +503,7 @@ Mathieu Salzmann, Pascal Fua, Noam Aigerman"
   explanation: "Characterization of convex sets of matrices possessing bounded Singular Values, enabling optimization via Semidefinite Programming."
   authors: "Shahar Kovalsky, Noam Aigerman, Ronen Basri, Yaron Lipman"
   title: "Controlling Singular Values with Semidefinite Programming"
-  venue: "ACM SIGGRAPH 2014"
+  venue: "ACM Transactions on Graphics (SIGGRAPH 2014)"
   links:
    "Paper": "html/projects/cont/cont_sing.pdf"
    "Low Res": "html/projects/cont/cont_sing_lowres.pdf"
@@ -514,7 +514,7 @@ Mathieu Salzmann, Pascal Fua, Noam Aigerman"
   explanation: "An efficient method for projecting an input piecewise-linear map onto the bounded-distortion space."
   authors: "Noam Aigerman, Yaron Lipman"
   title: "Injective and Bounded Distortion Mappings in 3D"
-  venue: "ACM SIGGRAPH 2013"
+  venue: "ACM Transactions on Graphics (SIGGRAPH 2013)"
   links:
    "Paper": "html/projects/bd3d/bd3d.pdf"
    "Low Res": "html/projects/bd3d/bd3d_lowres.pdf"
