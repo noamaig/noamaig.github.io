@@ -1,3 +1,31 @@
+- img: ""
+  img_alt: ""
+  explanation: "A triangulation-agnostic approach to flow matching on meshes, using Matérn noise to define a geometry-aware diffusion process independent of the mesh's triangulation."
+  authors: "Tianshu Kuai, Arman Maesumi, Daniel Ritchie, Noam Aigerman"
+  title: "Matérn Noise for Triangulation-Agnostic Flow Matching on Meshes"
+  venue: "ACM Transactions on Graphics (SIGGRAPH 2026)"
+
+- img: "html/cutouts.jpg"
+  img_alt: "A skeletal rig (left) drives a running boy character, which is automatically decomposed into separate cutout pieces (right) ready for 2.5D animation."
+  explanation: "An automated system for generating 2.5D cutout animation rigs from skeletal animations and text prompts, using Score Distillation Sampling to produce consistent, production-ready cutout imagery."
+  authors: "Ivan Puhachov, Noam Aigerman, Thibault Groueix, Mikhail Bessmeltsev"
+  title: "Generative Cutout Animation"
+  venue: "Computer Graphics Forum (Eurographics 2026)"
+  links:
+    "Paper": "https://www-labs.iro.umontreal.ca/~bmpix/pdf/PAPER_CUTOUTS.pdf"
+    "Project Page": "https://puhachov.xyz/publications/generative-cutout-animation/"
+
+- img: "html/sketch_gs.jpg"
+  img_alt: "Left: a sketch outline of a dinosaur. Right: the corresponding 3D Gaussian Splatting model deformed to match the sketch."
+  explanation: "A method for deforming 3D Gaussian Splatting representations using cage-based deformation driven by user sketches, enabling intuitive artist control over 3DGS scenes."
+  authors: "Tianhao Xie, Noam Aigerman, Eugene Belilovsky, Tiberiu Popa"
+  title: "Sketch-guided Cage-based 3D Gaussian Splatting Deformation"
+  venue: "WACV 2026"
+  links:
+    "Paper": "https://arxiv.org/abs/2411.12168"
+    "Project Page": "https://tianhaoxie.github.io/project/gs_deform/"
+    "Code": "https://github.com/tianhaoxie/gs_cage_deform"
+
 - img: "html/poissonnet.jpg"
   img_alt: "various experiments from the paper: deforming characters to arbitrary poses; segmenting characters; reproducing a high-frequency deformation of a piece of paper."
   explanation: "An architecture for learning signals over meshes, which is triangulation agnostic, while being more efficient and accurate than previous methods."
