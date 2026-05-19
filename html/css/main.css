@@ -245,7 +245,8 @@ min-width: 180px;
   }
   .teaser{
     justify-self: center;
-    min-width: 220px;
+    width: 300px;
+    min-width: 0;
   }
   
   #main{
