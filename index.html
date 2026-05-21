@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html style="font-size:100%">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Noam Aigerman's Homepage</title>
 	<script type="text/javascript" src="html/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="html/jquery/jquery-ui.min.js"></script>
@@ -317,7 +317,7 @@ $('.fancy-line').each(function(ind){$(this).delay(ind*250+300).animate({
 
 			{% if first_future and class.future == true %}
 				{% assign first_future = false %}
-      			<div style="position: relative;left: -0px;" class="student-group">Currently/Upcoming:</div>
+      			<div style="position: relative;left: -0px;" class="student-group">Currently / Upcoming:</div>
     		{% endif %}
 
 			{% if first_past and class.future != true %}
