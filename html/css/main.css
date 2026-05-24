@@ -362,6 +362,9 @@ a:hover{
 .paper-links{
   font-weight:bold
 }
+.paper-links a{
+  cursor: pointer;
+}
 .paper-title{
   font-weight: bold;
   padding-bottom: 3px;

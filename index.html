@@ -4,11 +4,13 @@
 <html style="font-size:100%">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="data:,"  />
 	<title>Noam Aigerman's Homepage</title>
+	<link rel="stylesheet" type="text/css" href="html/jquery/jquery-ui.min.css"/>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=block" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="html/css/main.css"/>
 	<script type="text/javascript" src="html/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="html/jquery/jquery-ui.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="html/jquery/jquery-ui.min.css"/>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="html/JS/setMail.js?2"></script>
 	
 	<script type="text/javascript">  
@@ -86,24 +88,6 @@
 		// 	$('#me3d').attr('src','pics/me3d.png');
 		// }
 		function setOpacity(){
-			return;
-			hideopa=0.7;
-			fadeint=200;
-			fadeoutt=500;
-			//$('.teaser').css('opacity', opa);  
-
-// when hover over the selected image change the opacity to 1  
-
-$('.teaser').hover(  
-	function(){  
-		$('.teaser').parent().stop().animate({'opacity':hideopa},fadeint); /*,'background-color':'none'*/
-		$(this).parent().stop().animate({'opacity':1},fadeint);/*,'background-color':'rgb(246,245,244)'*/
-
-	},  
-	function(){  
-		$('.teaser').parent().stop().animate({'opacity':1},fadeoutt)/*,'background-color':'none'*/
-	});  
-
 }
 function setYears(){
 	$('li.paperyear').each(function(){
@@ -115,8 +99,6 @@ function setYears(){
 }
 </script>
 
-
-<link rel="stylesheet" type="text/css" href="html/css/main.css"/>
 
 </head>
 
