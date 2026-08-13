@@ -252,6 +252,7 @@ min-width: 180px;
   #main{
     margin:5px;
     margin: 0px;
+    box-shadow: none;
   }
   body{
     margin: 0px;
@@ -401,6 +402,7 @@ a:hover{
 /*  linear-gradient(to right,lightsteelblue, white) 1;*/
     padding-left: 6px;
   margin-left: -10px;
+  pointer-events: none;
 }
 .icon{
   width: 20px;
